@@ -16,32 +16,39 @@ export function getCookies() {
 }
 
 //
-
 export function setCookies(
-  cookies: { key: COOKIE_VALUES; value: string; expires?: number }[],
+  cookies: { key: COOKIE_VALUES; value: string; expires?: number; isSession?: boolean }[],
 ): void;
 export function setCookies(
-  cookies: Partial<Record<COOKIE_VALUES, { value: string; expires?: number }>>,
+  cookies: Partial<Record<COOKIE_VALUES, { value: string; expires?: number; isSession?: boolean }>>,
 ): void;
 export function setCookies(
   cookies:
-    | { key: COOKIE_VALUES; value: string; expires?: number }[]
-    | Partial<Record<COOKIE_VALUES, { value: string; expires?: number }>>,
+    | { key: COOKIE_VALUES; value: string; expires?: number; isSession?: boolean }[]
+    | Partial<Record<COOKIE_VALUES, { value: string; expires?: number; isSession?: boolean }>>,
 ): void {
   // Default expiration time in days
   const defaultExpiration = 60;
 
   if (Array.isArray(cookies)) {
-    cookies.forEach(({ key, value, expires }) => {
-      const expiresInDays = expires !== undefined ? expires : defaultExpiration;
-      Cookies.set(key, value, { expires: expiresInDays });
+    cookies.forEach(({ key, value, expires, isSession }) => {
+      if (isSession) {
+        Cookies.set(key, value); // No expiration for session cookies
+      } else {
+        const expiresInDays = expires !== undefined ? expires : defaultExpiration;
+        Cookies.set(key, value, { expires: expiresInDays });
+      }
     });
   } else {
     Object.entries(cookies).forEach(([key, cookie]) => {
       if (cookie) {
-        const { value, expires } = cookie;
-        const expiresInDays = expires !== undefined ? expires : defaultExpiration;
-        Cookies.set(key as COOKIE_VALUES, value, { expires: expiresInDays });
+        const { value, expires, isSession } = cookie;
+        if (isSession) {
+          Cookies.set(key as COOKIE_VALUES, value); // No expiration for session cookies
+        } else {
+          const expiresInDays = expires !== undefined ? expires : defaultExpiration;
+          Cookies.set(key as COOKIE_VALUES, value, { expires: expiresInDays });
+        }
       }
     });
   }

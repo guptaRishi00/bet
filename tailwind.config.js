@@ -84,6 +84,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
         jersey: ['Jersey 10', 'ui-sans-serif', 'system-ui'],
+        poppins: ['Poppins', 'ui-sans-serif', 'system-ui'],
+        roboto_flex: ['Roboto Flex', 'ui-sans-serif', 'system-ui'],
+        bebas: ['Bebas Neue', 'cursive'],
       },
     },
   },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Bebas+Neue&family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Bebas+Neue&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -187,5 +187,21 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;
+  }
+
+  /* green border */
+  .custom-border {
+    background: linear-gradient(
+      90.78deg,
+      rgba(97, 243, 8, 0.75) 8.06%,
+      rgba(21, 181, 75, 0.75) 73.25%
+    );
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #19191d inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
