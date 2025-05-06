@@ -6,8 +6,11 @@ import lock_icon from '@/assets/lock_icon.png';
 import apple_icon from '@/assets/apple_icon.png';
 import facebook_icon from '@/assets/facebook_icon.png';
 import google_icon from '@/assets/google_icon.png';
+import { useNavigate } from 'react-router-dom';
+import { PATH } from '@/constants/routes';
 
 export default function SignIn() {
+  const navigate = useNavigate();
   return (
     <div
       className="h-screen w-screen flex items-center justify-center flex-col"
@@ -25,28 +28,28 @@ export default function SignIn() {
       </div>
 
       {/* text - welcome back */}
-      <div className="font-roboto mt-8">
+      <div className="font-roboto_flex mt-8">
         <p className="text-white font-semibold text-[18px] leading-[24px] tracking-[0] text-center align-middle">
           Welcome back
         </p>
       </div>
 
       {/* sign in into your account to continue */}
-      <div className="font-roboto mt-2">
+      <div className="font-roboto_flex mt-2">
         <p className="text-white font-medium text-[16px] leading-[24px] tracking-[0] text-center align-middle">
           Sign in to your account to continue
         </p>
       </div>
 
       {/* actual sign in block with black bg and shadow etc */}
-      <div className="rounded-md bg-[#1C1D2199] px-12 py-12 w-[44%] min-w-[380px]">
+      <div className="rounded-[16px] bg-[#1C1D2199] px-12 py-12 w-[44%] min-w-[380px]">
         {/* email complex input */}
         <div className="w-full ">
           <label htmlFor="email" className="text-white font-roboto_flex">
             Email
           </label>
-          <div className=" inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
-            <div className="w-full flex items-center bg-[#19191d] px-3 py-2 border-2 border-transparent p-4 rounded-[14px]">
+          <div className="mt-2  inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
+            <div className="w-full flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px]">
               <img src={email_icon} alt="email_icon" className="h-4 mr-3" />
               <input
                 type="email"
@@ -64,12 +67,17 @@ export default function SignIn() {
             <label htmlFor="password" className="text-white font-roboto_flex">
               Password
             </label>
-            <p className="text-[#61F308BF] font-poppins font-normal text-[14px] leading-[14px] tracking-[0]">
+            <p
+              onClick={() => {
+                navigate(PATH.FORGOT_PASSWORD);
+              }}
+              className="cursor-pointer text-[#61F308BF] font-poppins font-normal text-[14px] leading-[14px] tracking-[0]"
+            >
               Forgot password?
             </p>
           </div>
-          <div className=" inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
-            <div className="w-full flex items-center bg-[#19191d] px-3 py-2 border-2 border-transparent p-4 rounded-[14px]">
+          <div className="mt-2  inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
+            <div className="w-full flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px]">
               <img src={lock_icon} alt="lock_icon" className="h-4 mr-3" />
               <input
                 type="password"
@@ -131,17 +139,17 @@ export default function SignIn() {
         {/* google , facebook, apple */}
         <div className="flex items-center justify-center gap-20 mt-4">
           <div className="max-w-max inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
-            <div className="max-w-max flex items-center bg-[#19191d] px-3 py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
+            <div className="max-w-max flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
               <img src={google_icon} alt="google_icon" className="h-5" />
             </div>
           </div>
           <div className="max-w-max inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
-            <div className="max-w-max flex items-center bg-[#19191d] px-3 py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
+            <div className="max-w-max flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
               <img src={facebook_icon} alt="facebook_icon" className="h-5" />
             </div>
           </div>
           <div className="max-w-max inset-0 p-[2px] border-transparent rounded-[16px] custom-border">
-            <div className="max-w-max flex items-center bg-[#19191d] px-3 py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
+            <div className="max-w-max flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px] cursor-pointer">
               <img src={apple_icon} alt="apple_icon" className="h-5" />
             </div>
           </div>
@@ -150,7 +158,12 @@ export default function SignIn() {
         <div className="text-white w-full flex items-center justify-center mt-4">
           <p className="font-poppins  text-[14px] leading-[24px] tracking-[0]">
             Don't have an account?&nbsp;
-            <span className="text-[#61F308BF] underline underline-offset-[2px] decoration-[0%] decoration-solid ">
+            <span
+              onClick={() => {
+                navigate(PATH.SIGN_UP);
+              }}
+              className="cursor-pointer text-[#61F308BF] underline underline-offset-[2px] decoration-[0%] decoration-solid "
+            >
               Sign up
             </span>
           </p>

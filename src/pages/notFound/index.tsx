@@ -1,33 +1,28 @@
-function NotFound() {
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+export default function NotFound() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
-      <div className="text-center">
-        <h1 className="text-9xl font-bold text-gray-700">404</h1>
-        <p className="text-2xl font-medium text-gray-600 mt-4">Page Not Found</p>
-        <p className="text-gray-500 mt-2">Sorry, the page you are looking for does not exist.</p>
-        <div className="w-full flex items-center justify-center mt-4">
-          <div
-            className="flex items-center justify-center bg-slate-300 px-3 pl-4 py-1.5 rounded-full font-semibold hover:cursor-pointer w-min "
-            onClick={() => {}}
-          >
-            <button
-              style={{
-                background: 'white',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-              }}
-              className="flex items-center justify-center gap-2 whitespace-nowrap text-sm rounded-full"
-            >
-              <a href="/" className="text-lg rounded-md ">
-                Go to Homepage
-              </a>
-            </button>
-          </div>
-        </div>
-      </div>
+    <div
+      className="h-screen w-screen flex flex-col items-center justify-center text-white px-4 text-center"
+      style={{
+        background: 'linear-gradient(180deg, #101212 0%, #3B3E40 99.99%)',
+      }}
+    >
+      <h1 className="text-[96px] font-bold leading-[1] mb-4 text-[#61F308]">404</h1>
+      <h2 className="text-[24px] font-poppins font-semibold mb-2">Page Not Found</h2>
+      <p className="text-[14px] font-poppins max-w-[400px] text-[#ffffffcc] mb-6">
+        Sorry, the page you're looking for doesn't exist or has been moved.
+      </p>
+      <button
+        onClick={() => navigate(-1)}
+        className="flex items-center gap-2 bg-[#61F308] text-black px-6 py-2 rounded-[8px] font-poppins text-[14px] font-medium hover:opacity-90 transition"
+      >
+        <ArrowLeft size={16} />
+        Go Back
+      </button>
     </div>
   );
 }
-
-export default NotFound;

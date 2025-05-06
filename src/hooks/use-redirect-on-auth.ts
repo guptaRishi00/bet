@@ -14,7 +14,7 @@ const useRedirectOnAuth = () => {
         auth: { isAuthenticated },
       } = getCookies();
       if (!isAuthenticated) {
-        navigate(PATH.SIGN_IN);
+        navigate(PATH.FORGOT_PASSWORD);
         return;
       }
 
