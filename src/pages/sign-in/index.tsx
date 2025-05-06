@@ -1,7 +1,7 @@
 import bettingator_logo from '@/assets/bettingator_logo.png';
 import email_icon from '@/assets/email_icon.png';
 import lock_icon from '@/assets/lock_icon.png';
-import { LoaderCircle } from 'lucide-react';
+// import { LoaderCircle } from 'lucide-react'; // used for loading sign in button
 
 import apple_icon from '@/assets/apple_icon.png';
 import facebook_icon from '@/assets/facebook_icon.png';
