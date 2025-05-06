@@ -10,15 +10,19 @@ const useRedirectOnAuth = () => {
     const handleRedirect = async () => {
       //
       //
+      console.log('useRedirectOnAuth');
       const {
         auth: { isAuthenticated },
       } = getCookies();
       if (!isAuthenticated) {
-        navigate(PATH.FORGOT_PASSWORD);
+        console.log('not authenticated');
+        navigate(PATH.SIGN_IN);
         return;
       }
 
+      console.log('authenticated');
       window.history.pushState(null, '', PATH.HOME_PAGE);
+      console.log('redirecting to home page');
       navigate(`${PATH.HOME_PAGE}`);
     };
 

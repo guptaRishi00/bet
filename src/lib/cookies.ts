@@ -4,14 +4,12 @@ import Cookies from 'js-cookie';
 export function getCookies() {
   const accessToken = Cookies.get(COOKIE.ACCESS_TOKEN);
   const email = Cookies.get(COOKIE.EMAIL);
-  const firstName = Cookies.get(COOKIE.FIRST_NAME);
-  const lastName = Cookies.get(COOKIE.LAST_NAME);
   const userId = Cookies.get(COOKIE.USER_ID);
 
-  const isAuthenticated = accessToken && email && firstName && lastName && userId;
+  const isAuthenticated = accessToken && email && userId;
 
   return {
-    auth: { accessToken, email, firstName, lastName, userId, isAuthenticated },
+    auth: { accessToken, email, userId, isAuthenticated },
   };
 }
 

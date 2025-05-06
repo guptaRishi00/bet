@@ -4,8 +4,6 @@ import { isProduction } from '@/config/env';
 export const COOKIE = {
   ACCESS_TOKEN: 'BBettingator_v1_access_token',
   EMAIL: 'BBettingator_v1_email',
-  FIRST_NAME: 'BBettingator_v1_firstName',
-  LAST_NAME: 'BBettingator_v1_lastName',
   USER_ID: 'BBettingator_v1_userId',
 };
 export type COOKIE_KEYS = keyof typeof COOKIE;

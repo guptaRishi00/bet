@@ -3,7 +3,7 @@ import router from '@/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Layout } from '@/customComponents';
-import { Toaster } from './components/ui/toaster';
+import { Toaster } from '@/components/ui/sonner';
 
 function App() {
   const [queryClient] = useState(
@@ -22,7 +22,13 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          classNames: {
+            toast: 'bg-[#1C1D21] text-white rounded-md p-4 border-[#15b54b] shadow-lg',
+          },
+        }}
+      />
     </Layout>
   );
 }
