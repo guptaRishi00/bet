@@ -87,6 +87,7 @@ export default {
         poppins: ['Poppins', 'ui-sans-serif', 'system-ui'],
         roboto_flex: ['Roboto Flex', 'ui-sans-serif', 'system-ui'],
         bebas: ['Bebas Neue', 'cursive'],
+        lexend: ['Lexend', 'ui-sans-serif', 'system-ui'],
       },
     },
   },
