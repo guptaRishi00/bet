@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export function TopbarHeader() {
   const navigate = useNavigate();
   return (
-    <div className="w-full h-[56px] bg-[#000000] flex justify-between items-center text-white">
+    <div className="w-full h-[56px] bg-[#000000] flex justify-between items-center text-white z-[100]">
       <div>
         <img
           onClick={() => {
