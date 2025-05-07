@@ -2,6 +2,8 @@ import { SecondTopbarHeaderBreadcrumb } from '@/customComponents/SecondTopbarHea
 import { TopbarHeader } from '@/customComponents/TopbarHeader';
 import search_icon from '@/assets/search_icon.png';
 import hero_image from '@/assets/hero_image.jpg';
+import user_picture from '@/assets/user_picture.png';
+import win_tick_icon from '@/assets/win_tick_icon.png';
 import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundButton';
 
 export default function HomePage() {
@@ -108,7 +110,45 @@ export default function HomePage() {
             </div>
           </div>
           {/* previous tips */}
-          <div></div>
+          <div
+            style={{
+              boxShadow: '0px 4px 333px 0px #00000040',
+            }}
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px]"
+          >
+            <p className="ml-8 mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+              Previous Tips
+            </p>
+
+            <div className="mt-6 flex flex-row items-center justify-start gap-4">
+              {/* brick one */}
+              <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-[420px] h-[178px]">
+                <div className="h-full w-full rounded-[11px] bg-[#19191d]">
+                  {/* content actualtity */}
+                  <div className="w-full flex items-center justify-between pr-6">
+                    <div className="flex flex-row items-center gap-2 pt-4 ml-4">
+                      <img
+                        src={user_picture}
+                        alt="user_picture"
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <p className="font-roboto_flex font-semibold text-[14px] leading-[24px] tracking-[0] text-white">
+                        James Rodriguez
+                      </p>
+                    </div>
+                    <div className="p-[1px] rounded-[8px] custom-border max-w-max mt-4">
+                      <div className="flex items-center gap-2 bg-[#1F2E24] rounded-[7.5px] px-2 border border-transparent">
+                        <img src={win_tick_icon} alt="win_tick_icon" className="h-4 w-4" />
+                        <p className="text-[#61F308BF] font-roboto_flex font-normal text-[14px] leading-[24px] tracking-[0]">
+                          Win
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* top events */}
           <div></div>
           {/* all tips */}
