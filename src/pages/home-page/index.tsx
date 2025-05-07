@@ -31,7 +31,7 @@ export default function HomePage() {
               Previous Tips
             </p>
 
-            <div className="mt-6 flex flex-row items-center justify-center gap-4">
+            <div className="mt-6 flex flex-row items-center justify-center gap-4 px-4">
               {/* brick one */}
               <PreviousTipsCard />
               <PreviousTipsCard />

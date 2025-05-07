@@ -5,7 +5,7 @@ export function SearchBar() {
   return (
     <div className="w-full flex items-center py-4">
       {/* Centered Search Bar */}
-      <div className="flex-grow flex justify-center">
+      <div className="flex-grow flex justify-center -mr-40">
         <div className="w-[60%] max-w-[860px] min-w-[400px]">
           <div
             style={{
