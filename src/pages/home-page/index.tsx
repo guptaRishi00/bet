@@ -4,6 +4,12 @@ import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundB
 import { PreviousTipsCard } from '@/customComponents/PreviousTipsCard';
 import { HeroImageComponent } from '@/pages/home-page/components/HeroImageComponent';
 import { SearchBar } from '@/customComponents/SearchBar';
+import logo_laliga_logo from '@/assets/logo_laliga_logo.png';
+import logo_champions_league_logo from '@/assets/logo_champions_league_logo.png';
+import logo_premiere_league_logo from '@/assets/logo_premiere_league_logo.png';
+import logo_bundesliga_logo from '@/assets/logo_bundesliga_logo.png';
+import { EventBannersHomePage } from '@/customComponents/Eventbanners';
+import { TodayHotTipsCard } from '@/customComponents/TodayHotTipsCard';
 
 export default function HomePage() {
   console.log('HomePage');
@@ -42,7 +48,45 @@ export default function HomePage() {
             </div>
           </div>
           {/* top events */}
-          <div></div>
+          <div
+            style={{
+              boxShadow: '0px 4px 333px 0px #00000040',
+            }}
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] flex"
+          >
+            <div className="w-1/3 flex flex-col items-start justify-start">
+              <div className="px-3 flex flex-col w-full">
+                <p className="w-full mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                  Previous Tips
+                </p>
+                <div className="w-full flex flex-col items-start justify-start gap-2 mt-6">
+                  <EventBannersHomePage brandLogo={logo_laliga_logo} brandName="LaLiga" />
+                  <EventBannersHomePage
+                    brandLogo={logo_champions_league_logo}
+                    brandName="Champions League"
+                  />
+                  <EventBannersHomePage
+                    brandLogo={logo_premiere_league_logo}
+                    brandName="Premiere League"
+                  />
+                  <EventBannersHomePage brandLogo={logo_bundesliga_logo} brandName="Bundesliga" />
+                </div>
+              </div>
+            </div>
+            <div className="w-2/3">
+              <div className="px-3 flex flex-col w-full">
+                <p className="mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                  Today's hot Tips
+                </p>
+                <div className="w-full grid grid-cols-2 gap-y-2 gap-x-4 mt-6">
+                  <TodayHotTipsCard />
+                  <TodayHotTipsCard />
+                  <TodayHotTipsCard />
+                  <TodayHotTipsCard />
+                </div>
+              </div>
+            </div>
+          </div>
           {/* all tips */}
           <div></div>
           {/* featured tipsters */}
