@@ -14,7 +14,7 @@ export function EventBannersHomePage({
         }}
       >
         <div className="w-full flex items-center justify-between px-4">
-          <p className="text-white font-poppins font-medium text-[24px] leading-[36px] text-center align-middle">
+          <p className="text-white font-poppins font-medium text-[24px] leading-[36px] align-middle">
             {brandName}
           </p>
 

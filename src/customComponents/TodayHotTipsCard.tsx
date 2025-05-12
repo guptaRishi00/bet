@@ -3,7 +3,7 @@ import ellipses_icon from '@/assets/ellipses_icon.png';
 
 export function TodayHotTipsCard() {
   return (
-    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-full h-[202px]">
+    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-full min-h-[202px]">
       <div className="h-full w-full rounded-[11px] bg-[#19191d] text-white">
         {/* content actualtity */}
         <div className="w-full flex items-center justify-between pr-6">
@@ -58,7 +58,7 @@ export function TodayHotTipsCard() {
           </div>
         </div>
         {/*  */}
-        <div className="w-full flex items-center justify-between mt-0.5 px-6">
+        <div className="w-full flex items-center justify-between mt-0.5 px-6 mb">
           <p className="font-roboto_flex font-medium text-[12px] leading-[24px] tracking-[0] text-[#61F308BF]">
             BTTS & Over 2.5
           </p>
