@@ -10,8 +10,8 @@ import google_icon from '@/assets/google_icon.png';
 import { useNavigate } from 'react-router-dom';
 import { PATH } from '@/constants/routes';
 import { useState } from 'react';
-import { setCookies } from '@/lib/cookies';
-import { COOKIE } from '@/constants/common';
+// import { setCookies } from '@/lib/cookies';
+// import { COOKIE } from '@/constants/common';
 
 import { toast } from 'sonner';
 
@@ -34,33 +34,35 @@ export default function SignIn() {
       // After successful sign-in, navigate to the desired page
       await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate async operation
 
+      toast.error('Sign-in failed'); // Simulate error
+
       // set cookies to remember user based on the rememberMe state
       // if rememberMe is true, set a cookie with a 30-day expiration
       // if rememberMe is false, set a session cookie
 
-      setCookies([
-        {
-          key: COOKIE.ACCESS_TOKEN,
-          value: 'sampleAccess',
-          isSession: !rememberMe,
-          expires: rememberMe ? 30 : undefined, // 30 days
-        },
-        {
-          key: COOKIE.EMAIL,
-          value: email,
-          isSession: !rememberMe,
-          expires: rememberMe ? 30 : undefined, // 30 days
-        },
-        {
-          key: COOKIE.USER_ID,
-          value: 'sampleUserId',
-          isSession: !rememberMe,
-          expires: rememberMe ? 30 : undefined, // 30 days
-        },
-      ]);
-      console.log('Cookies set successfully');
-      navigate(PATH.HOME_PAGE);
-      toast.success('Sign-in successful');
+      // setCookies([
+      //   {
+      //     key: COOKIE.ACCESS_TOKEN,
+      //     value: 'sampleAccess',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.EMAIL,
+      //     value: email,
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.USER_ID,
+      //     value: 'sampleUserId',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      // ]);
+      // console.log('Cookies set successfully');
+      // navigate(PATH.HOME_PAGE);
+      // toast.success('Sign-in successful');
     } catch (error) {
       console.error('Sign-in error:', error);
     } finally {

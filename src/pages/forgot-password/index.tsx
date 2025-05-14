@@ -1,11 +1,62 @@
 import bettingator_logo from '@/assets/bettingator_logo.png';
 import email_icon from '@/assets/email_icon.png';
 import { PATH } from '@/constants/routes';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { LoaderCircle } from 'lucide-react'; // used for loading sign in button
+import { LoaderCircle } from 'lucide-react'; // used for loading sign in button
+
+import { toast } from 'sonner';
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleForgotPasswordhandler = async () => {
+    try {
+      console.log('Sign-in button clicked');
+      console.log('email:', email);
+      setIsLoading(true);
+      // Perform sign-in logic here
+      // After successful sign-in, navigate to the desired page
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate async operation
+
+      toast.error('Sign-in failed'); // Simulate error
+
+      // set cookies to remember user based on the rememberMe state
+      // if rememberMe is true, set a cookie with a 30-day expiration
+      // if rememberMe is false, set a session cookie
+
+      // setCookies([
+      //   {
+      //     key: COOKIE.ACCESS_TOKEN,
+      //     value: 'sampleAccess',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.EMAIL,
+      //     value: email,
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.USER_ID,
+      //     value: 'sampleUserId',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      // ]);
+      // console.log('Cookies set successfully');
+      // navigate(PATH.HOME_PAGE);
+      // toast.success('Sign-in successful');
+    } catch (error) {
+      console.error('Sign-in error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div
       className="h-screen w-screen flex items-center justify-center flex-col"
@@ -50,6 +101,8 @@ export default function ForgotPassword() {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins"
               />
@@ -62,12 +115,19 @@ export default function ForgotPassword() {
         {/* Send reset link button  */}
         <div className="w-full flex items-center justify-center mt-8">
           <div className="rounded-[25px] text-white px-4 py-2 font-poppins text-[14px] font-medium bg-[linear-gradient(90deg,_#61F308_0%,_#15B54B_100%)] max-w-min whitespace-nowrap">
-            <button className="w-[194px] h-[28px] font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]">
-              Send reset link
-            </button>
-            {/* <div className="w-[194px] h-[28px] flex items-center justify-center">
-            <LoaderCircle className="animate-spin w-4 h-4 text-white" />
-            </div> */}
+            {!isLoading && (
+              <button
+                onClick={handleForgotPasswordhandler}
+                className="w-[194px] h-[28px] font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]"
+              >
+                Send reset link
+              </button>
+            )}
+            {isLoading && (
+              <div className="w-[194px] h-[28px] flex items-center justify-center">
+                <LoaderCircle className="animate-spin w-4 h-4 text-white" />
+              </div>
+            )}
           </div>
         </div>
 

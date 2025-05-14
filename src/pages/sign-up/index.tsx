@@ -1,6 +1,7 @@
 import bettingator_logo from '@/assets/bettingator_logo.png';
 import email_icon from '@/assets/email_icon.png';
 import lock_icon from '@/assets/lock_icon.png';
+import eye_icon from '@/assets/eye_icon.png';
 // import { LoaderCircle } from 'lucide-react'; // used for loading sign in button
 
 import apple_icon from '@/assets/apple_icon.png';
@@ -8,9 +9,63 @@ import facebook_icon from '@/assets/facebook_icon.png';
 import google_icon from '@/assets/google_icon.png';
 import { useNavigate } from 'react-router-dom';
 import { PATH } from '@/constants/routes';
+import { useState } from 'react';
+
+import { toast } from 'sonner';
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+
+  const handleSignUp = async () => {
+    try {
+      console.log('Sign-in button clicked');
+      console.log('email:', email);
+      setIsLoading(true);
+      // Perform sign-in logic here
+      // After successful sign-in, navigate to the desired page
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate async operation
+
+      toast.error('Sign-up failed'); // Simulate error
+
+      // set cookies to remember user based on the rememberMe state
+      // if rememberMe is true, set a cookie with a 30-day expiration
+      // if rememberMe is false, set a session cookie
+
+      // setCookies([
+      //   {
+      //     key: COOKIE.ACCESS_TOKEN,
+      //     value: 'sampleAccess',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.EMAIL,
+      //     value: email,
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      //   {
+      //     key: COOKIE.USER_ID,
+      //     value: 'sampleUserId',
+      //     isSession: !rememberMe,
+      //     expires: rememberMe ? 30 : undefined, // 30 days
+      //   },
+      // ]);
+      // console.log('Cookies set successfully');
+      // navigate(PATH.HOME_PAGE);
+      // toast.success('Sign-in successful');
+    } catch (error) {
+      console.error('Sign-in error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <div
       className="h-screen w-screen flex items-center justify-center flex-col"
@@ -74,6 +129,8 @@ export default function SignUp() {
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins"
                 />
@@ -93,12 +150,25 @@ export default function SignUp() {
               <div className="w-full flex items-center bg-[#19191d] px-[18px] py-2 border-2 border-transparent p-4 rounded-[14px]">
                 <img src={lock_icon} alt="lock_icon" className="h-4 mr-3" />
                 <input
-                  type="password"
+                  type={isPasswordVisible ? 'text' : 'password'}
                   id="password"
                   name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins"
                 />
+                <div
+                  className="relative h-4 w-4 ml-3 cursor-pointer"
+                  onClick={() => setIsPasswordVisible((prev) => !prev)}
+                >
+                  <img src={eye_icon} alt="eye_icon" className="h-4 w-4" />
+                  {isPasswordVisible && (
+                    <div className="absolute left-0 top-0 w-full h-full pointer-events-none">
+                      <div className="w-[2px] h-[120%]  bg-white/50 rotate-45 absolute top-[-10%] left-1/2 transform -translate-x-1/2" />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -115,9 +185,22 @@ export default function SignUp() {
                   type="password"
                   id="confirm-password"
                   name="confirm-password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm your password"
                   className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins"
                 />
+                <div
+                  className="relative h-4 w-4 ml-3 cursor-pointer"
+                  onClick={() => setIsConfirmPasswordVisible((prev) => !prev)}
+                >
+                  <img src={eye_icon} alt="eye_icon" className="h-4 w-4" />
+                  {isConfirmPasswordVisible && (
+                    <div className="absolute left-0 top-0 w-full h-full pointer-events-none">
+                      <div className="w-[2px] h-[120%]  bg-white/50 rotate-45 absolute top-[-10%] left-1/2 transform -translate-x-1/2" />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -156,7 +239,11 @@ export default function SignUp() {
         {/* sign in button  */}
         <div className="w-full flex items-center justify-center mt-4">
           <div className="rounded-[25px] text-white px-4 py-2 font-poppins text-[14px] font-medium bg-[linear-gradient(90deg,_#61F308_0%,_#15B54B_100%)] max-w-min whitespace-nowrap">
-            <button className="w-[194px] h-[28px] font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]">
+            <button
+              onClick={handleSignUp}
+              disabled={isLoading}
+              className="w-[194px] h-[28px] font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]"
+            >
               Sign In
             </button>
             {/* <div className="w-[194px] h-[28px] flex items-center justify-center">
