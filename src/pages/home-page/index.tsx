@@ -4,14 +4,14 @@ import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundB
 import { PreviousTipsCard } from '@/customComponents/PreviousTipsCard';
 import { HeroImageComponent } from '@/pages/home-page/components/HeroImageComponent';
 import { SearchBar } from '@/customComponents/SearchBar';
-import logo_laliga_logo from '@/assets/logo_laliga_logo.png';
-import logo_champions_league_logo from '@/assets/logo_champions_league_logo.png';
-import logo_premiere_league_logo from '@/assets/logo_premiere_league_logo.png';
-import logo_bundesliga_logo from '@/assets/logo_bundesliga_logo.png';
-import { EventBannersHomePage } from '@/customComponents/Eventbanners';
-import { TodayHotTipsCard } from '@/customComponents/TodayHotTipsCard';
+import { TopEvents } from '@/customComponents/TopEvents';
 import { cn } from '@/lib/utils';
-import { MoveRight } from 'lucide-react';
+
+import football_arsenal from '@/assets/football_arsenal.png';
+import football_barcelona from '@/assets/football_barcelona.png';
+import football_bayern_munchen from '@/assets/football_bayern_munchen.png';
+import football_real_madrid from '@/assets/football_real_madrid.png';
+import { AITipsCard } from '@/customComponents/AITipsCard';
 
 export default function HomePage() {
   console.log('HomePage');
@@ -50,68 +50,75 @@ export default function HomePage() {
             </div>
           </div>
           {/* top events */}
+          <TopEvents />
+          {/* all tips */}
           <div
             style={{
               boxShadow: '0px 4px 333px 0px #00000040',
             }}
-            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] flex flex-col"
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px]"
           >
-            <div className="w-full flex">
-              <div className="w-1/3 flex flex-col items-start justify-start">
-                <div className="px-3 flex flex-col w-full">
-                  <p className="w-full mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
-                    Previous Tips
-                  </p>
-                  <div className="w-full flex flex-col items-start justify-start gap-2 mt-6">
-                    <EventBannersHomePage brandLogo={logo_laliga_logo} brandName="LaLiga" />
-                    <EventBannersHomePage
-                      brandLogo={logo_champions_league_logo}
-                      brandName="Champions League"
-                    />
-                    <EventBannersHomePage
-                      brandLogo={logo_premiere_league_logo}
-                      brandName="Premiere League"
-                    />
-                    <EventBannersHomePage brandLogo={logo_bundesliga_logo} brandName="Bundesliga" />
-                  </div>
-                </div>
-              </div>
-              <div className="w-2/3">
-                <div className="px-3 flex flex-col w-full">
-                  <p className="mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
-                    Today's hot Tips
-                  </p>
-                  <div className="w-full grid grid-cols-2 gap-y-2 gap-x-4 mt-6">
-                    <TodayHotTipsCard />
-                    <TodayHotTipsCard />
-                    <TodayHotTipsCard />
-                    <TodayHotTipsCard />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* view all tips button */}
-            <div className="self-end mr-3 mt-6 mb-8">
-              <div
-                className={cn(
-                  'rounded-[16px] h-[48px] w-[189px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block',
-                )}
-              >
-                <button
+            <div className="flex flex-row items-center justify-between mt-6">
+              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                AI Tips
+              </p>
+              <div className="flex flex-row items-center justify-center gap-4 mr-8">
+                <div
                   className={cn(
-                    'h-full w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[16px] leading-[24px] tracking-[0] text-white bg-[#19191d] rounded-[15px]',
+                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block',
                   )}
                 >
-                  View All Tips
-                  <span>
-                    <MoveRight />
-                  </span>
-                </button>
+                  <button
+                    className={cn(
+                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
+                    )}
+                  >
+                    83% Accuracy
+                  </button>
+                </div>
+                <div
+                  className={cn(
+                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block',
+                  )}
+                >
+                  <button
+                    className={cn(
+                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
+                    )}
+                  >
+                    +28% Average ROI
+                  </button>
+                </div>
               </div>
             </div>
+            <div className="mt-6 flex flex-row items-center justify-center gap-4 px-4">
+              {/* brick one */}
+
+              <AITipsCard
+                football_1_logo={football_barcelona}
+                football_1_name="Barcelona"
+                football_2_logo={football_real_madrid}
+                football_2_name="Real Madrid"
+              />
+              <AITipsCard
+                football_1_logo={football_barcelona}
+                football_1_name="Barcelona"
+                football_2_logo={football_real_madrid}
+                football_2_name="Real Madrid"
+              />
+              <AITipsCard
+                football_1_logo={football_bayern_munchen}
+                football_1_name="Bayern"
+                football_2_logo={football_arsenal}
+                football_2_name="Arsenal"
+              />
+            </div>
+            <div className="w-full flex items-center justify-center mb-8">
+              <GradientBackgroundButton className="px-16 mt-6">
+                More AI Tips
+              </GradientBackgroundButton>
+            </div>
           </div>
-          {/* all tips */}
-          <div></div>
           {/* featured tipsters */}
           <div></div>
           {/* why bettingator */}
