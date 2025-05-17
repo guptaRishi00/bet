@@ -13,6 +13,11 @@ import football_bayern_munchen from '@/assets/football_bayern_munchen.png';
 import football_real_madrid from '@/assets/football_real_madrid.png';
 import { AITipsCard } from '@/customComponents/AITipsCard';
 
+import profile_image_1 from '@/assets/profile_image_1.png';
+import profile_image_2 from '@/assets/profile_image_2.png';
+import profile_image_3 from '@/assets/profile_image_3.png';
+import { FeaturedTipsters } from '@/customComponents/FeaturedTipsters';
+
 export default function HomePage() {
   console.log('HomePage');
   return (
@@ -114,13 +119,53 @@ export default function HomePage() {
               />
             </div>
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-16 mt-6">
+              <GradientBackgroundButton className="px-12 mt-6">
                 More AI Tips
               </GradientBackgroundButton>
             </div>
           </div>
           {/* featured tipsters */}
-          <div></div>
+          <div
+            style={{
+              boxShadow: '0px 4px 333px 0px #00000040',
+            }}
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] "
+          >
+            <div className="flex flex-row items-center justify-between mt-6">
+              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                Featured Tipsters
+              </p>
+              <div className="flex flex-row items-center justify-center gap-4 mr-8">
+                <div
+                  className={cn(
+                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1px] inline-block',
+                  )}
+                >
+                  <button
+                    className={cn(
+                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
+                    )}
+                  >
+                    Top Performers
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/*  */}
+            <div className="w-full flex flex-col items-center justify-center gap-4 px-8 mt-6">
+              {/*  */}
+              <FeaturedTipsters profile_image={profile_image_1} displayName="James Rodriguez" />
+              <FeaturedTipsters profile_image={profile_image_2} displayName="Alex Thompson" />
+              <FeaturedTipsters profile_image={profile_image_3} displayName="Jacob Wilson" />
+            </div>
+
+            <div className="w-full flex items-center justify-center mb-8">
+              <GradientBackgroundButton className="px-7 mt-6">
+                Show All Tipsters
+              </GradientBackgroundButton>
+            </div>
+          </div>
           {/* why bettingator */}
           <div></div>
           {/* latest blogs */}
