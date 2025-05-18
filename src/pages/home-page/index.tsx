@@ -27,6 +27,11 @@ import icon_why_transparent_win from '@/assets/icon_why_transparent_win.png';
 import icon_why_verified_tipster_live from '@/assets/icon_why_verified_tipster_live.png';
 import { WhyBettingatorCard, WhyBettingatorCardSmall } from '@/customComponents/WhyBettingatorCard';
 
+import blog_pic_1 from '@/assets/blog_pic_1.png';
+import blog_pic_2 from '@/assets/blog_pic_2.png';
+import blog_pic_3 from '@/assets/blog_pic_3.png';
+import { BlogCard } from '@/customComponents/BlogCard';
+
 export default function HomePage() {
   console.log('HomePage');
   return (
@@ -60,7 +65,9 @@ export default function HomePage() {
               <PreviousTipsCard />
             </div>
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-16 mt-6">View All</GradientBackgroundButton>
+              <GradientBackgroundButton className="px-16 mt-6 h-[48px]">
+                View All
+              </GradientBackgroundButton>
             </div>
           </div>
           {/* top events */}
@@ -128,7 +135,7 @@ export default function HomePage() {
               />
             </div>
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-12 mt-6">
+              <GradientBackgroundButton className="px-12 mt-6 h-[48px]">
                 More AI Tips
               </GradientBackgroundButton>
             </div>
@@ -170,7 +177,7 @@ export default function HomePage() {
             </div>
 
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-7 mt-6">
+              <GradientBackgroundButton className="px-7 mt-6 h-[48px]">
                 Show All Tipsters
               </GradientBackgroundButton>
             </div>
@@ -232,13 +239,50 @@ export default function HomePage() {
             </div>
             {/*  */}
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-[14px] mt-6">
+              <GradientBackgroundButton className="px-[14px] mt-6 h-[48px]">
                 Start Winning Today
               </GradientBackgroundButton>
             </div>
           </div>
           {/* latest blogs */}
-          <div></div>
+          <div
+            style={{
+              boxShadow: '0px 4px 333px 0px #00000040',
+            }}
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] "
+          >
+            <div className="flex flex-row items-center justify-between mt-6">
+              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                Latest Blogs
+              </p>
+            </div>
+
+            {/*  */}
+            <div className="flex flex-row items-start justify-center gap-6 mt-6">
+              <BlogCard
+                blog_pic={blog_pic_1}
+                heading="5 Advanced Betting Strategies for Football"
+                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+              />
+              <BlogCard
+                blog_pic={blog_pic_2}
+                heading="5 Advanced Betting Strategies for Football"
+                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+              />
+              <BlogCard
+                blog_pic={blog_pic_3}
+                heading="5 Advanced Betting Strategies for Football"
+                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+              />
+            </div>
+            <div className="w-full flex items-center justify-center mb-8">
+              <GradientBackgroundButton className="px-[33px] mt-6 h-[48px]">
+                View All Articles
+              </GradientBackgroundButton>
+            </div>
+
+            {/*  */}
+          </div>
           {/* testimonials */}
           <div></div>
           {/* subscribe newsletters */}
