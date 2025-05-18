@@ -33,6 +33,8 @@ import blog_pic_3 from '@/assets/blog_pic_3.png';
 import { BlogCard } from '@/customComponents/BlogCard';
 import { TestimonialCard } from '@/customComponents/TestimonialCard';
 
+import icon_mail_subscriber from '@/assets/icon_mail_subscriber.png';
+
 export default function HomePage() {
   console.log('HomePage');
   return (
@@ -316,8 +318,53 @@ export default function HomePage() {
             {/*  */}
             <div className="mb-8" />
           </div>
+
           {/* subscribe newsletters */}
-          <div></div>
+
+          <div
+            className="w-full bg-[#25282bbf] backdrop-blur-[333px] rounded-[16px] mt-9 flex flex-col items-center justify-start"
+            style={{
+              backdropFilter: 'blur(333px)',
+              WebkitBackdropFilter: 'blur(333px)', // for Safari
+            }}
+          >
+            <img src={icon_mail_subscriber} className="w-[56px] h-[56px] object-contain mt-8" />
+            <p className="text-[#FDFDFD] font-poppins font-bold text-[40px] leading-[24px] tracking-[0] mt-6">
+              Subscribe to our Newsletter
+            </p>
+            <p className="text-[#FDFDFD] font-roboto font-normal text-[20px] leading-[32px] tracking-[0] mt-6 text-center w-full">
+              Get the latest betting tips, exclusive offers, and expert insights delivered straight
+              to your inbox.
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <div
+                style={{
+                  boxShadow: '0px 0px 60px 10px rgba(97, 243, 8, 0.25)',
+                }}
+                className="inset-0 p-[1px] border-transparent rounded-[16px] custom-border h-[48px]"
+              >
+                <div className="flex items-center bg-[#19191d] px-[18px] py-2 h-full border-2 border-transparent p-4 rounded-[15px] w-[346px]">
+                  <input
+                    type="text"
+                    id="search"
+                    name="search"
+                    placeholder="Search Matches"
+                    className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins font-normal text-[16px] leading-[24px] tracking-[0] placeholder:text-[#A7A8AA] placeholder:opacity-100"
+                  />
+                </div>
+              </div>
+              <div className="w-full flex items-center justify-center">
+                <GradientBackgroundButton className="px-[36px] h-[48px]">
+                  Subscribe Now
+                </GradientBackgroundButton>
+              </div>
+            </div>
+            <p className="text-[#FFFFFFBF] font-poppins font-normal text-[14px] leading-[24px] tracking-[0] mt-5 mb-8 text-center w-full">
+              By subscribing, you agree to our Privacy Policy and consent to receive updates from
+              our company.
+            </p>
+          </div>
+
           {/* footer */}
           <div></div>
         </div>
