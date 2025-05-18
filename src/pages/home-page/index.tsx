@@ -31,6 +31,7 @@ import blog_pic_1 from '@/assets/blog_pic_1.png';
 import blog_pic_2 from '@/assets/blog_pic_2.png';
 import blog_pic_3 from '@/assets/blog_pic_3.png';
 import { BlogCard } from '@/customComponents/BlogCard';
+import { TestimonialCard } from '@/customComponents/TestimonialCard';
 
 export default function HomePage() {
   console.log('HomePage');
@@ -258,7 +259,7 @@ export default function HomePage() {
             </div>
 
             {/*  */}
-            <div className="flex flex-row items-start justify-center gap-6 mt-6">
+            <div className="flex flex-row items-start justify-center gap-6 mt-6 px-6">
               <BlogCard
                 blog_pic={blog_pic_1}
                 heading="5 Advanced Betting Strategies for Football"
@@ -284,7 +285,37 @@ export default function HomePage() {
             {/*  */}
           </div>
           {/* testimonials */}
-          <div></div>
+          <div
+            style={{
+              boxShadow: '0px 4px 333px 0px #00000040',
+            }}
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] "
+          >
+            <div className="flex flex-row items-center justify-between mt-6">
+              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+                Testimonials
+              </p>
+            </div>
+
+            {/*  */}
+            <div className="flex flex-row items-start justify-center gap-6 mt-6 px-6">
+              <TestimonialCard
+                personName="Michael  S."
+                content="The AI predictions have been spot on. I've increased my winnings by 40% in just one month! The platform is easy to use and the data insights are incredibly valuable."
+              />
+              <TestimonialCard
+                personName="Jessica  T."
+                content="Best sports prediction app I've used. The tipsters are incredibly knowledgeable and the community is supportive. I've learned so much about strategic betting."
+              />
+              <TestimonialCard
+                personName="Robert  K."
+                content="The data-driven approach makes all the difference. No more guesswork! I can make informed decisions based on actual statistics and expert analysis."
+              />
+            </div>
+
+            {/*  */}
+            <div className="mb-8" />
+          </div>
           {/* subscribe newsletters */}
           <div></div>
           {/* footer */}
