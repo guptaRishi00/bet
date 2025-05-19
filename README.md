@@ -60,10 +60,3 @@ npx shadcn-ui init
 ```
 
 ---
-
-## 🎯 Additional Notes
-
-- This project is optimized for seamless **celebrity-brand interactions**.
-- Contributions and feature requests are welcome!
-
-Happy coding! 🚀
