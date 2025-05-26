@@ -36,7 +36,7 @@ export default function TipsPage() {
         <div className="w-full px-12 flex flex-col items-start mt-10">
           <SearchTopbarTipsPage />
           {/*  */}
-          <div className="flex w-full flex-row items-start justify-between mt-8">
+          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
@@ -56,7 +56,7 @@ export default function TipsPage() {
               football_2_name="Real Madrid"
             />
           </div>
-          <div className="flex w-full flex-row items-start justify-between mt-8">
+          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
@@ -76,7 +76,7 @@ export default function TipsPage() {
               football_2_name="Real Madrid"
             />
           </div>
-          <div className="flex w-full flex-row items-start justify-between mt-8">
+          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
