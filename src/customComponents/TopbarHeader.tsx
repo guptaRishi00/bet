@@ -20,7 +20,14 @@ export function TopbarHeader() {
       </div>
       <div>
         <ul className="flex gap-9 items-center justify-center font-roboto_flex font-medium text-[16px] leading-[24px] tracking-[0]">
-          <li className="cursor-pointer hover:text-[#61F308]">Tips</li>
+          <li
+            className="cursor-pointer hover:text-[#61F308]"
+            onClick={() => {
+              navigate(PATH.TIPS_PAGE);
+            }}
+          >
+            Tips
+          </li>
           <li className="cursor-pointer hover:text-[#61F308]">AI Tips</li>
           <li className="cursor-pointer hover:text-[#61F308]">Tipsters</li>
           <li className="cursor-pointer hover:text-[#61F308]">Predict</li>

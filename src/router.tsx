@@ -22,6 +22,19 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: PATH.TIPS_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/tips-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
         path: PATH.SIGN_IN,
         lazy: async () => {
           const { default: SignIn } = await import('./pages/sign-in');
