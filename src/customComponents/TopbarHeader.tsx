@@ -43,7 +43,16 @@ export function TopbarHeader() {
           >
             AI Tips
           </li>
-          <li className="cursor-pointer hover:text-[#61F308]">Tipsters</li>
+          <li
+            className={`cursor-pointer hover:text-[#61F308] ${
+              currentPath === PATH.TIPSTERS_PAGE ? 'text-[#61F308]' : ''
+            }`}
+            onClick={() => {
+              navigate(PATH.TIPSTERS_PAGE);
+            }}
+          >
+            Tipsters
+          </li>
           <li className="cursor-pointer hover:text-[#61F308]">Predict</li>
           <li className="cursor-pointer hover:text-[#61F308]">Results</li>
           <li className="mr-6 cursor-pointer group relative w-6 h-6">
