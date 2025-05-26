@@ -4,14 +4,14 @@ import { TopbarHeader } from '@/customComponents/TopbarHeader';
 
 import icons_tips_page_back_arrow from '@/assets/icons_tips_page_back_arrow.png';
 import { useNavigate } from 'react-router-dom';
-import { AiTipsCardTipsPage } from '@/customComponents/AiTipsCardTipsPage';
 
 import football_real_madrid from '@/assets/football_real_madrid.png';
 import football_barcelona from '@/assets/football_barcelona.png';
 import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundButton';
 import { Footer } from '@/customComponents/Footer';
+import { AiTipsCardAitTipsPage } from '@/customComponents/AiTipsCardAitTipsPage';
 
-export default function TipsPage() {
+export default function AiTipsPage() {
   const navigate = useNavigate();
   return (
     <div className="h-screen w-screen flex justify-center items-start bg-[#171919] overflow-y-auto recent-creation-horizontal-scrollbar">
@@ -30,46 +30,26 @@ export default function TipsPage() {
             }}
           />
           <span className="font-poppins font-medium text-[20px] leading-[20px] tracking-[0] text-white pl-3">
-            Tips
+            AI Tips
           </span>
         </div>
         <div className="w-full px-12 flex flex-col items-start mt-10">
           <SearchTopbarTipsPage buttonName="Bet Slip" />
           {/*  */}
           <div className="flex w-full flex-row items-start justify-between mt-[42px]">
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-            <AiTipsCardTipsPage
-              football_1_logo={football_barcelona}
-              football_1_name="Barcelona"
-              football_2_logo={football_real_madrid}
-              football_2_name="Real Madrid"
-            />
-          </div>
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
-            <AiTipsCardTipsPage
-              football_1_logo={football_barcelona}
-              football_1_name="Barcelona"
-              football_2_logo={football_real_madrid}
-              football_2_name="Real Madrid"
-            />
-            <AiTipsCardTipsPage
-              football_1_logo={football_barcelona}
-              football_1_name="Barcelona"
-              football_2_logo={football_real_madrid}
-              football_2_name="Real Madrid"
-            />
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}
@@ -77,19 +57,39 @@ export default function TipsPage() {
             />
           </div>
           <div className="flex w-full flex-row items-start justify-between mt-[42px]">
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-            <AiTipsCardTipsPage
+            <AiTipsCardAitTipsPage
+              football_1_logo={football_barcelona}
+              football_1_name="Barcelona"
+              football_2_logo={football_real_madrid}
+              football_2_name="Real Madrid"
+            />
+          </div>
+          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
+            <AiTipsCardAitTipsPage
+              football_1_logo={football_barcelona}
+              football_1_name="Barcelona"
+              football_2_logo={football_real_madrid}
+              football_2_name="Real Madrid"
+            />
+            <AiTipsCardAitTipsPage
+              football_1_logo={football_barcelona}
+              football_1_name="Barcelona"
+              football_2_logo={football_real_madrid}
+              football_2_name="Real Madrid"
+            />
+            <AiTipsCardAitTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
               football_2_logo={football_real_madrid}

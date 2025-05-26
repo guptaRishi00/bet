@@ -7,7 +7,7 @@ import icon_tips_page_filter from '@/assets/icon_tips_page_filter.png';
 import icon_tips_page_arrow_down from '@/assets/icon_tips_page_arrow_down.png';
 import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundButton';
 
-export function SearchTopbarTipsPage() {
+export function SearchTopbarTipsPage({ buttonName }: { buttonName: string }) {
   return (
     <div className="w-full flex items-center justify-center gap-8">
       {/* search input start */}
@@ -46,7 +46,9 @@ export function SearchTopbarTipsPage() {
         <img src={icon_tips_page_arrow_down} className="h-[20px] w-[20px]" />
       </GradientBorderButton>
       {/* filter end */}
-      <GradientBackgroundButton className="w-[164px] h-[48px]">Bet Slip</GradientBackgroundButton>
+      <GradientBackgroundButton className="w-[164px] h-[48px]">
+        {buttonName}
+      </GradientBackgroundButton>
     </div>
   );
 }

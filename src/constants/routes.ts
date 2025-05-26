@@ -6,5 +6,6 @@ export const PATH = {
   HOME_PAGE: '/home-page',
   CATCH_ALL: '*',
   //
-  TIPS_PAGE: '/tips-page',
+  TIPS_PAGE: '/all-tips',
+  AI_TIPS_PAGE: '/ai-tips',
 };

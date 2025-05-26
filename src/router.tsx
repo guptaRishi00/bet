@@ -35,6 +35,19 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: PATH.AI_TIPS_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/ai-tips-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
         path: PATH.SIGN_IN,
         lazy: async () => {
           const { default: SignIn } = await import('./pages/sign-in');
