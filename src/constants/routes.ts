@@ -9,4 +9,5 @@ export const PATH = {
   TIPS_PAGE: '/all-tips',
   AI_TIPS_PAGE: '/ai-tips',
   TIPSTERS_PAGE: '/tipsters',
+  PREDICT_PAGE: '/predict',
 };

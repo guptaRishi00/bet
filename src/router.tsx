@@ -61,6 +61,19 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: PATH.PREDICT_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/predict-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
         path: PATH.SIGN_IN,
         lazy: async () => {
           const { default: SignIn } = await import('./pages/sign-in');

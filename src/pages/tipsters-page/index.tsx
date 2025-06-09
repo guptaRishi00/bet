@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundButton';
 import { Footer } from '@/customComponents/Footer';
 import { TipstersCardTipstersPage } from '@/customComponents/TipstersCardTipstersPage';
+import { VerifiedTipsterCard } from '@/customComponents/VerifiedTipsterCard';
 
 export default function AiTipsterPage() {
   const navigate = useNavigate();
@@ -51,40 +52,7 @@ export default function AiTipsterPage() {
               Load More Tips
             </GradientBackgroundButton>
           </div>
-          <div className="w-full">
-            <div className="bg-[#1C1D2199] flex flex-row items-center justify-between rounded-[16px]">
-              <div className="flex flex-col pt-8 pl-14">
-                <p className="font-poppins font-semibold text-[24px] leading-[24px] tracking-[0] text-white">
-                  Unlock Premium Tips
-                </p>
-                <p className="font-poppins font-semibold text-[14px] leading-[24px] tracking-[0] text-[#FFFFFFBF]">
-                  Get access to all premium tips, detailed analysis, and exclusive features.
-                </p>
-
-                <div className="mt-4 mb-9 ml-[18px] text-white">
-                  <ul className="list-disc pl-5">
-                    <li>Access to all premium tips</li>
-                    <li>Detailed statistical analysis</li>
-                    <li>Expert insights and predictions</li>
-                  </ul>
-                </div>
-              </div>
-              {/*  */}
-              <div className="mr-10">
-                <div className="flex flex-row items-center justify-center mb-4 text-white">
-                  <p className="font-poppins font-semibold text-[24px] leading-[24px] tracking-[0]">
-                    $21.99
-                  </p>
-                  <span className="font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]">
-                    /month
-                  </span>
-                </div>
-                <GradientBackgroundButton className="h-[48px] w-[194px]">
-                  Subscribe Now
-                </GradientBackgroundButton>
-              </div>
-            </div>
-          </div>
+          <VerifiedTipsterCard />
           <Footer />
         </div>
       </div>
