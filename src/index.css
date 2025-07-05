@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Bebas+Neue&family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Lexend:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #1a1a1a;
+    --primary-foreground: #fafafa;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #1a1a1a;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --accent: #f5f5f5;
+    --accent-foreground: #1a1a1a;
+    --destructive: #d32f2f;
+    --destructive-foreground: #fafafa;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #0a0a0a;
+    --chart-1: #e57373;
+    --chart-2: #4caf50;
+    --chart-3: #2196f3;
+    --chart-4: #ffeb3b;
+    --chart-5: #ff9800;
+    --radius: 8px;
+    /* custom below */
+    --background: #09090b;
+    --background-left-most-panel: #18181b;
+    --box-shadow-left-most-panel: 0px 19px 29px 0px rgba(30, 31, 34, 0.05); /* custom box shadow */
+    /* colors for linear-gradient(79deg, #0158f7 7.03%, #7839ee 100%),#10a37f; */
+    --color-from-left-most-panel-icon: #0158f7;
+    --color-via-left-most-panel-icon: #7839ee;
+    --color-to-left-most-panel-icon: #7839ee;
+    --color-bg-left-most-panel-icon: #10a37f;
+    --color-bg-history-counter: #cddafc;
+    --color-bg-history-search-bar: #2e3035;
+    --color-bg-history-search-bar-placeholder: #a1a1aa;
+    --color-bg-history-filter-icon: #1e1f22;
+    --color-bg-font-family: #030711;
+    --color-video-card-border: '#E8E8E8';
+  }
+
+  .dark {
+    --foreground: #fafafa;
+    --card: #0a0a0a;
+    --card-foreground: #fafafa;
+    --popover: #0a0a0a;
+    --popover-foreground: #fafafa;
+    --primary: #fafafa;
+    --primary-foreground: #1a1a1a;
+    --secondary: #262626;
+    --secondary-foreground: #fafafa;
+    --muted: #262626;
+    --muted-foreground: #a1a1a1;
+    --accent: #262626;
+    --accent-foreground: #fafafa;
+    --destructive: #b71c1c;
+    --destructive-foreground: #fafafa;
+    --border: #262626;
+    --input: #262626;
+    --ring: #d1d1d1;
+    --chart-1: #3f51b5;
+    --chart-2: #009688;
+    --chart-3: #ff5722;
+    --chart-4: #673ab7;
+    --chart-5: #e91e63;
+    /* custom below */
+    --background: #09090b;
+    --background-left-most-panel: #18181b;
+    --box-shadow-left-most-panel: 0px 19px 29px 0px rgba(30, 31, 34, 0.05); /* custom box shadow */
+    /* colors for linear-gradient(79deg, #0158f7 7.03%, #7839ee 100%),#10a37f; */
+    --color-from-left-most-panel-icon: #0158f7;
+    --color-via-left-most-panel-icon: #7839ee;
+    --color-to-left-most-panel-icon: #7839ee;
+    --color-bg-left-most-panel-icon: #10a37f;
+    --color-bg-history-counter: #cddafc;
+    --color-bg-history-search-bar: #2e3035;
+    --color-bg-history-search-bar-placeholder: #a1a1aa;
+    --color-bg-history-filter-icon: #1e1f22;
+    --color-bg-font-family: #030711;
+    --color-video-card-border: '#E8E8E8';
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Custom scrollbar styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #010101;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Custom scrollbar styles */
+  .recent-creation-horizontal-scrollbar::-webkit-scrollbar {
+    width: 1px;
+    height: 4px;
+  }
+
+  .recent-creation-horizontal-scrollbar::-webkit-scrollbar-track {
+    background: #010101;
+  }
+
+  .recent-creation-horizontal-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1px; /* Adjust the border radius */
+    border: 2px solid #555; /* Add a border if needed */
+  }
+
+  .recent-creation-horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Change the background color on hover */
+  }
+  /* Custom scrollbar styles */
+  .recent-creation-horizontal-scrollbar-zero-width::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .recent-creation-horizontal-scrollbar-zero-width::-webkit-scrollbar-track {
+    background: #010101;
+  }
+
+  .recent-creation-horizontal-scrollbar-zero-width::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1px; /* Adjust the border radius */
+    border: 2px solid #555; /* Add a border if needed */
+  }
+
+  .recent-creation-horizontal-scrollbar-zero-width::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Change the background color on hover */
+  }
+
+  .jersey-10-regular {
+    font-family: 'Jersey 10', serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, max(1fr, calc(100% / auto-fit - 16px)))); */
+  }
+
+  /* vodeo controllers visibility: ; */
+  .controls-default::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .controls-visible::-webkit-media-controls {
+    opacity: 1;
+  }
+
+  .controls-hidden::-webkit-media-controls {
+    opacity: 0;
+  }
+
+  .video-card-parent-div:hover .video-card-absolute {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .video-card-absolute {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+
+  /* green border */
+  .custom-border {
+    background: linear-gradient(
+      90.78deg,
+      rgba(97, 243, 8, 0.75) 8.06%,
+      rgba(21, 181, 75, 0.75) 73.25%
+    );
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #19191d inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

@@ -1,0 +1,108 @@
+import { createBrowserRouter } from 'react-router-dom';
+import WidthHeightFullBgBackgroundLayout from '@/components/layout/WidthHeightFullBgBackgroundLayout';
+import PrivateRoutes from '@/components/layout/PrivateRoute';
+import { PATH } from './constants/routes';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <WidthHeightFullBgBackgroundLayout />,
+    children: [
+      {
+        path: PATH.HOME_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/home-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
+        path: PATH.TIPS_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/tips-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
+        path: PATH.AI_TIPS_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/ai-tips-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
+        path: PATH.TIPSTERS_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/tipsters-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
+        path: PATH.PREDICT_PAGE,
+        lazy: async () => {
+          const { default: Component } = await import('./pages/predict-page');
+          return {
+            Component: () => (
+              <PrivateRoutes>
+                <Component />
+              </PrivateRoutes>
+            ),
+          };
+        },
+      },
+      {
+        path: PATH.SIGN_IN,
+        lazy: async () => {
+          const { default: SignIn } = await import('./pages/sign-in');
+          return { Component: SignIn };
+        },
+      },
+      {
+        path: PATH.SIGN_UP,
+        lazy: async () => {
+          const { default: SignUp } = await import('./pages/sign-up');
+          return { Component: SignUp };
+        },
+      },
+      {
+        path: PATH.FORGOT_PASSWORD,
+        lazy: async () => {
+          const { default: ForgotPassword } = await import('./pages/forgot-password');
+          return { Component: ForgotPassword };
+        },
+      },
+      {
+        path: '*',
+        lazy: async () => {
+          const { default: NotFound } = await import('./pages/notFound');
+          return { Component: NotFound };
+        },
+      },
+    ],
+  },
+]);
+
+export default router;
