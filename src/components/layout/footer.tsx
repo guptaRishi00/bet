@@ -10,7 +10,7 @@ export function Footer() {
   const navigate = useNavigate();
   return (
     <div className="w-full flex flex-col mt-9 mb-14">
-      <div className="flex flex-row items-center justify-between w-full px-12">
+      <div className="flex flex-col md:flex-row md:items-center gap-y-5 justify-between w-full px-12">
         <div>
           <h4 className="text-[#FFFFFF] font-roboto_flex font-bold text-[16px] leading-[24px] tracking-[0]">
             Company
@@ -62,7 +62,7 @@ export function Footer() {
         {/*  */}
       </div>
       <hr className="my-6" />
-      <div className="w-full flex flex-row items-center justify-between">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between gap-y-5">
         <div className="flex flex-row items-center justify-center gap-3">
           <img
             onClick={() => {

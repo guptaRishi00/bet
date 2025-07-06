@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { cn } from '@/lib/utils';
-import { Card } from '@/components/new_comp/card';
+// import { Card } from '@/components/new_comp/card';
 import { Badge } from '@/components/new_comp/badge';
 import { Button } from '@/components/buttons/button';
 
@@ -33,7 +33,6 @@ export function AiTipsCard({
   className,
   leagueTextColor = 'text-white',
   teamLogoSize = 'lg',
-  height = '322px',
 }: AiTipsCardProps) {
   const teamLogoSizeClass = teamLogoSize === 'lg' ? 'h-[84px] w-[84px]' : 'h-[40px] w-[40px]';
   const vsLogoSizeClass = teamLogoSize === 'lg' ? 'h-[64px] w-[64px]' : 'h-[40px] w-[40px]';
@@ -45,7 +44,6 @@ export function AiTipsCard({
         'p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF]',
         className,
       )}
-      style={{ height }}
     >
       <div className={cn('rounded-[11px] text-white h-full flex flex-col', bgColor)}>
         {variant === 'default' ? (
@@ -87,7 +85,7 @@ export function AiTipsCard({
           </div>
         )}
 
-        <div className={cn('flex-1 px-4', variant === 'default' ? 'mt-2' : 'mt-5')}>
+        <div className={cn('flex-1 px-4 py-2', variant === 'default' ? 'mt-2' : 'mt-5')}>
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-center gap-3">
               <img src={football_arsenal} alt="Arsenal" className={teamLogoSizeClass} />
