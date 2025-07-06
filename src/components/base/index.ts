@@ -1,5 +1,5 @@
-export * from './card';
-export * from './badge';
+export * from '../new_comp/card';
+export * from '../new_comp/badge';
 export * from '@/components/ui/separator';
 export * from '@/components/ui/dialog';
 export * from '@/components/ui/tooltip';

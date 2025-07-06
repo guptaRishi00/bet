@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Card } from '@/components/base/card';
-import { Badge } from '@/components/base/badge';
+import { Card } from '@/components/new_comp/card';
+import { Badge } from '@/components/new_comp/badge';
 import { Button } from '@/components/buttons/button';
 
 import football_arsenal from '@/assets/football_arsenal.png';
@@ -43,7 +43,7 @@ export function AiTipsCard({
     <div
       className={cn(
         'p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF]',
-        className
+        className,
       )}
       style={{ height }}
     >

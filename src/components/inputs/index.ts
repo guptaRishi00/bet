@@ -1,4 +1,4 @@
-export * from './search-input';
+export * from '../new_comp/search-input';
 export * from '@/components/ui/input';
 export * from '@/components/ui/textarea';
 export * from './select';
