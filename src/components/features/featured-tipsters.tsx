@@ -8,8 +8,8 @@ export function FeaturedTipsters({
   displayName: string;
 }) {
   return (
-    <div className="w-full p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] max-w-[1290px] h-[120px]">
-      <div className="w-full h-full rounded-[11px] bg-[#17181C] text-white flex flex-row overflow-clip items-center">
+    <div className="w-full p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] max-w-[1290px]">
+      <div className="w-full h-full rounded-[11px] bg-[#17181C] text-white flex flex-row overflow-clip items-center p-2">
         {/* content actualtity start */}
         <div className="pl-6">
           <img src={profile_image} className="w-[96px] h-[96px] object-contain" />

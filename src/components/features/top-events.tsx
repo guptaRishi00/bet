@@ -16,8 +16,8 @@ export function TopEvents() {
       }}
       className="w-full bg-[#1C1D21] mt-9 rounded-[16px] flex flex-col"
     >
-      <div className="w-full flex">
-        <div className="w-1/3 flex flex-col items-start justify-start">
+      <div className="w-full flex flex-col ">
+        <div className="flex flex-col items-start justify-start">
           <div className="px-3 flex flex-col w-full">
             <p className="w-full mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
               Top Events
@@ -36,12 +36,12 @@ export function TopEvents() {
             </div>
           </div>
         </div>
-        <div className="w-2/3">
+        <div className="w-full">
           <div className="px-3 flex flex-col w-full">
             <p className="mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
               Today's hot Tips
             </p>
-            <div className="w-full grid grid-cols-2 gap-y-2 gap-x-4 mt-6">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 mt-6">
               <TodayHotTipsCard />
               <TodayHotTipsCard />
               <TodayHotTipsCard />

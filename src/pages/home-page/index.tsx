@@ -25,7 +25,10 @@ import icon_why_proven_roi from '@/assets/icon_why_proven_roi.png';
 import icon_why_real_time_updates from '@/assets/icon_why_real_time_updates.png';
 import icon_why_transparent_win from '@/assets/icon_why_transparent_win.png';
 import icon_why_verified_tipster_live from '@/assets/icon_why_verified_tipster_live.png';
-import { WhyBettingatorCard, WhyBettingatorCardSmall } from '@/components/cards/why-bettingator-card';
+import {
+  WhyBettingatorCard,
+  WhyBettingatorCardSmall,
+} from '@/components/cards/why-bettingator-card';
 
 import blog_pic_1 from '@/assets/blog_pic_1.png';
 import blog_pic_2 from '@/assets/blog_pic_2.png';
@@ -52,23 +55,19 @@ export default function HomePage() {
           <HeroImageComponent />
           {/* previous tips */}
           <div
-            style={{
-              boxShadow: '0px 4px 333px 0px #00000040',
-            }}
             className="w-full bg-[#1C1D21] mt-9 rounded-[16px]"
+            style={{ boxShadow: '0px 4px 333px 0px #00000040' }}
           >
-            <p className="ml-8 mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+            <p className="ml-8 mt-6 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0] sm:ml-4">
               Previous Tips
             </p>
-
-            <div className="mt-6 flex flex-row items-center justify-center gap-4 px-4">
-              {/* brick one */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
               <PreviousTipsCard />
               <PreviousTipsCard />
               <PreviousTipsCard />
             </div>
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-16 mt-6 h-[48px]">
+              <GradientBackgroundButton className="px-16 mt-6 h-[48px] sm:px-6">
                 View All
               </GradientBackgroundButton>
             </div>
@@ -77,47 +76,27 @@ export default function HomePage() {
           <TopEvents />
           {/* all tips */}
           <div
-            style={{
-              boxShadow: '0px 4px 333px 0px #00000040',
-            }}
             className="w-full bg-[#1C1D21] mt-9 rounded-[16px]"
+            style={{ boxShadow: '0px 4px 333px 0px #00000040' }}
           >
-            <div className="flex flex-row items-center justify-between mt-6">
-              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+            <div className="flex flex-row items-center justify-between mt-6 sm:items-start sm:px-4">
+              <div className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0] sm:ml-0 sm:text-[18px]">
                 AI Tips
-              </p>
-              <div className="flex flex-row items-center justify-center gap-4 mr-8">
-                <div
-                  className={cn(
-                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block',
-                  )}
-                >
-                  <button
-                    className={cn(
-                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
-                    )}
-                  >
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block">
+                  <button className="bg-[#1F2E24] h-full px-3 flex items-center justify-center gap-2 font-poppins font-semibold text-[8px] sm:text-[12px] leading-[24px] text-white rounded-[7px]">
                     83% Accuracy
                   </button>
                 </div>
-                <div
-                  className={cn(
-                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block',
-                  )}
-                >
-                  <button
-                    className={cn(
-                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
-                    )}
-                  >
+                <div className="rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1.5px] inline-block">
+                  <button className="bg-[#1F2E24] h-full px-3 flex items-center justify-center gap-2 font-poppins font-semibold text-[8px] sm:text-[12px] leading-[24px] text-white rounded-[7px]">
                     +28% Average ROI
                   </button>
                 </div>
               </div>
             </div>
-            <div className="mt-6 flex flex-row items-center justify-center gap-4 px-4">
-              {/* brick one */}
-
+            <div className="mt-6 gap-4 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <AITipsCard
                 football_1_logo={football_barcelona}
                 football_1_name="Barcelona"
@@ -137,50 +116,36 @@ export default function HomePage() {
                 football_2_name="Arsenal"
               />
             </div>
-            <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-12 mt-6 h-[48px]">
+            <div className="flex items-center justify-center mb-8">
+              <GradientBackgroundButton className="px-12 mt-6 h-[48px] sm:px-6 sm:w-full mx-auto">
                 More AI Tips
               </GradientBackgroundButton>
             </div>
           </div>
           {/* featured tipsters */}
           <div
-            style={{
-              boxShadow: '0px 4px 333px 0px #00000040',
-            }}
-            className="w-full bg-[#1C1D21] mt-9 rounded-[16px] "
+            className="w-full bg-[#1C1D21] mt-9 rounded-[16px]"
+            style={{ boxShadow: '0px 4px 333px 0px #00000040' }}
           >
-            <div className="flex flex-row items-center justify-between mt-6">
-              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0]">
+            <div className="flex flex-row items-center justify-between mt-6 sm:px-4">
+              <p className="ml-8 text-white font-poppins font-semibold text-[20px] leading-[24px] tracking-[0] sm:ml-0 sm:text-[18px]">
                 Featured Tipsters
               </p>
-              <div className="flex flex-row items-center justify-center gap-4 mr-8">
-                <div
-                  className={cn(
-                    'rounded-[8px] h-[24px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1px] inline-block',
-                  )}
-                >
-                  <button
-                    className={cn(
-                      'bg-[#1F2E24] h-full px-3 w-full flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] tracking-[0] text-white rounded-[7px]',
-                    )}
-                  >
+              <div className="flex flex-row items-center justify-center gap-4 mr-8 sm:mr-0">
+                <div className="rounded-[8px] bg-gradient-to-r from-[#61F308] to-[#15B54B] p-[1px] inline-block">
+                  <button className="bg-[#1F2E24] h-full px-3 flex items-center justify-center gap-2 font-poppins font-semibold text-[12px] leading-[24px] text-white rounded-[7px]">
                     Top Performers
                   </button>
                 </div>
               </div>
             </div>
-
-            {/*  */}
-            <div className="w-full flex flex-col items-center justify-center gap-4 px-8 mt-6">
-              {/*  */}
+            <div className="w-full flex flex-col items-center justify-center gap-4 px-8 mt-6 sm:px-4">
               <FeaturedTipsters profile_image={profile_image_1} displayName="James Rodriguez" />
               <FeaturedTipsters profile_image={profile_image_2} displayName="Alex Thompson" />
               <FeaturedTipsters profile_image={profile_image_3} displayName="Jacob Wilson" />
             </div>
-
             <div className="w-full flex items-center justify-center mb-8">
-              <GradientBackgroundButton className="px-7 mt-6 h-[48px]">
+              <GradientBackgroundButton className="px-7 mt-6 h-[48px] sm:w-full sm:px-4">
                 Show All Tipsters
               </GradientBackgroundButton>
             </div>
@@ -201,7 +166,7 @@ export default function HomePage() {
             </div>
 
             {/*  */}
-            <div className="flex flex-row items-start justify-center gap-4 px-8 mt-6">
+            <div className="gap-4 px-8 mt-6 grid grid-cols-1 md:grid-cols-2">
               <WhyBettingatorCard
                 icon={icon_why_verified_tipster_live}
                 heading="Verified Tipsters with Live Stats"
@@ -223,7 +188,7 @@ export default function HomePage() {
                 details="Premium members get access to VIP tips, in-depth analysis reports, and early access to high-value predictions before they're released to the public."
               />
             </div>
-            <div className="flex flex-row items-center justify-center gap-4 px-8 mt-9">
+            <div className="gap-4 px-8 mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
               <WhyBettingatorCardSmall
                 icon={icon_why_community_insights}
                 heading="Community Insights"
@@ -234,11 +199,13 @@ export default function HomePage() {
                 heading="Proven ROI"
                 details="Average 89% ROI for premium members"
               />
-              <WhyBettingatorCardSmall
-                icon={icon_why_real_time_updates}
-                heading="Real - Time Updates"
-                details="Live odds and in-play betting recommendations"
-              />
+              <div className="sm:col-span-2 md:col-span-1">
+                <WhyBettingatorCardSmall
+                  icon={icon_why_real_time_updates}
+                  heading="Real - Time Updates"
+                  details="Live odds and in-play betting recommendations"
+                />
+              </div>
             </div>
             {/*  */}
             <div className="w-full flex items-center justify-center mb-8">
@@ -261,22 +228,28 @@ export default function HomePage() {
             </div>
 
             {/*  */}
-            <div className="flex flex-row items-start justify-center gap-6 mt-6 px-6">
-              <BlogCard
-                blog_pic={blog_pic_1}
-                heading="5 Advanced Betting Strategies for Football"
-                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
-              />
-              <BlogCard
-                blog_pic={blog_pic_2}
-                heading="5 Advanced Betting Strategies for Football"
-                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
-              />
-              <BlogCard
-                blog_pic={blog_pic_3}
-                heading="5 Advanced Betting Strategies for Football"
-                content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 px-6">
+              <div>
+                <BlogCard
+                  blog_pic={blog_pic_1}
+                  heading="5 Advanced Betting Strategies for Football"
+                  content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+                />
+              </div>
+              <div>
+                <BlogCard
+                  blog_pic={blog_pic_2}
+                  heading="5 Advanced Betting Strategies for Football"
+                  content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+                />
+              </div>
+              <div className="sm:col-span-2 lg:col-span-1">
+                <BlogCard
+                  blog_pic={blog_pic_3}
+                  heading="5 Advanced Betting Strategies for Football"
+                  content="Learn how professional bettors analyze matches and make profitable decisions with these advanced strategies."
+                />
+              </div>
             </div>
             <div className="w-full flex items-center justify-center mb-8">
               <GradientBackgroundButton className="px-[33px] mt-6 h-[48px]">
@@ -300,7 +273,7 @@ export default function HomePage() {
             </div>
 
             {/*  */}
-            <div className="flex flex-row items-start justify-center gap-6 mt-6 px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 px-6">
               <TestimonialCard
                 personName="Michael  S."
                 content="The AI predictions have been spot on. I've increased my winnings by 40% in just one month! The platform is easy to use and the data insights are incredibly valuable."
@@ -322,44 +295,53 @@ export default function HomePage() {
           {/* subscribe newsletters */}
 
           <div
-            className="w-full bg-[#25282bbf] backdrop-blur-[333px] rounded-[16px] mt-9 flex flex-col items-center justify-start"
+            className="w-full bg-[#25282bbf] backdrop-blur-[333px] rounded-[16px] mt-9 flex flex-col items-center justify-start px-6 sm:px-10"
             style={{
               backdropFilter: 'blur(333px)',
-              WebkitBackdropFilter: 'blur(333px)', // for Safari
+              WebkitBackdropFilter: 'blur(333px)', // Safari fix
             }}
           >
-            <img src={icon_mail_subscriber} className="w-[56px] h-[56px] object-contain mt-8" />
-            <p className="text-[#FDFDFD] font-poppins font-bold text-[40px] leading-[24px] tracking-[0] mt-6">
+            <img
+              src={icon_mail_subscriber}
+              className="w-[56px] h-[56px] object-contain mt-8"
+              alt="Subscribe Icon"
+            />
+
+            <p className="text-[#FDFDFD] font-poppins font-bold text-[28px] sm:text-[36px] md:text-[40px] leading-[32px] text-center mt-6">
               Subscribe to our Newsletter
             </p>
-            <p className="text-[#FDFDFD] font-roboto font-normal text-[20px] leading-[32px] tracking-[0] mt-6 text-center w-full">
+
+            <p className="text-[#FDFDFD] font-roboto font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[28px] sm:leading-[30px] tracking-[0] mt-4 text-center w-full">
               Get the latest betting tips, exclusive offers, and expert insights delivered straight
               to your inbox.
             </p>
-            <div className="flex items-center justify-center gap-2 mt-8">
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 mt-8 w-full max-w-[720px]">
               <div
                 style={{
                   boxShadow: '0px 0px 60px 10px rgba(97, 243, 8, 0.25)',
                 }}
-                className="inset-0 p-[1px] border-transparent rounded-[16px] custom-border h-[48px]"
+                className="p-[1px] border-transparent rounded-[16px] custom-border w-full"
               >
-                <div className="flex items-center bg-[#19191d] px-[18px] py-2 h-full border-2 border-transparent p-4 rounded-[15px] w-[346px]">
+                <div className="flex items-center bg-[#19191d] px-4 py-2 h-full border-2 border-transparent rounded-[15px] w-full">
                   <input
                     type="text"
                     id="search"
                     name="search"
                     placeholder="Search Matches"
-                    className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins font-normal text-[16px] leading-[24px] tracking-[0] placeholder:text-[#A7A8AA] placeholder:opacity-100"
+                    className="w-full bg-inherit outline-none text-white font-poppins placeholder:font-poppins font-normal text-[14px] sm:text-[16px] leading-[24px] placeholder:text-[#A7A8AA] placeholder:opacity-100"
                   />
                 </div>
               </div>
-              <div className="w-full flex items-center justify-center">
-                <GradientBackgroundButton className="px-[36px] h-[48px]">
+
+              <div className="w-full sm:w-auto flex items-center justify-center">
+                <GradientBackgroundButton className="w-full sm:w-auto px-[36px] h-[48px] text-sm sm:text-base">
                   Subscribe Now
                 </GradientBackgroundButton>
               </div>
             </div>
-            <p className="text-[#FFFFFFBF] font-poppins font-normal text-[14px] leading-[24px] tracking-[0] mt-5 mb-8 text-center w-full">
+
+            <p className="text-[#FFFFFFBF] font-poppins font-normal text-[13px] sm:text-[14px] leading-[20px] sm:leading-[24px] mt-5 mb-8 text-center w-full max-w-[720px]">
               By subscribing, you agree to our Privacy Policy and consent to receive updates from
               our company.
             </p>

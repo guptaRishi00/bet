@@ -4,7 +4,7 @@ import calendor_icon from '@/assets/calendor_icon.png';
 
 export function PreviousTipsCard() {
   return (
-    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-[420px] h-[178px]">
+    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-full h-[178px]">
       <div className="h-full w-full rounded-[11px] bg-[#19191d] text-white">
         {/* content actualtity */}
         <div className="w-full flex items-center justify-between pr-6">
