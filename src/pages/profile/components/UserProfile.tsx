@@ -28,7 +28,9 @@ export default function UserProfile() {
             </Badge>
           </div>
         </div>
-        <MdOutlineMenu size={20} />
+        <span className="" onClick={() => navigate('/profile-settings')}>
+          <MdOutlineMenu size={20} />
+        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
