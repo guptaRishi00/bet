@@ -7,11 +7,9 @@ function WidthHeightFullBgBackgroundLayout() {
   useRedirectOnAuth();
   return (
     <div className="w-full h-full flex">
-      <div className="w-full h-full flex">
-        <AnimatePresence mode="wait">
-          <Outlet /> {/* No motion.div here, it goes inside each page */}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence mode="wait">
+        <Outlet />
+      </AnimatePresence>
     </div>
   );
 }

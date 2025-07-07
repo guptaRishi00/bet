@@ -18,10 +18,8 @@ function App() {
   );
 
   return (
-    <Layout>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
       <Toaster
         toastOptions={{
           classNames: {
@@ -29,7 +27,7 @@ function App() {
           },
         }}
       />
-    </Layout>
+    </QueryClientProvider>
   );
 }
 

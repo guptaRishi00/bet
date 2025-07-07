@@ -95,6 +95,41 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: PATH.RESULTS_PAGE,
+        lazy: async () => {
+          const { default: ResultsPage } = await import('./pages/result-page');
+          return { Component: ResultsPage };
+        },
+      },
+      {
+        path: PATH.PROFILE_PAGE,
+        lazy: async () => {
+          const { default: Profile } = await import('./pages/profile');
+          return { Component: Profile };
+        },
+      },
+      {
+        path: PATH.WALLET_PAGE,
+        lazy: async () => {
+          const { default: Wallet } = await import('./pages/profile/wallet');
+          return { Component: Wallet };
+        },
+      },
+      {
+        path: PATH.MY_TIPS,
+        lazy: async () => {
+          const { default: MyTips } = await import('./pages/profile/my-tips');
+          return { Component: MyTips };
+        },
+      },
+      {
+        path: PATH.SAVED_TIPS,
+        lazy: async () => {
+          const module = await import('./pages/profile/saved-tips');
+          return { default: module.default };
+        },
+      },
+      {
         path: '*',
         lazy: async () => {
           const { default: NotFound } = await import('./pages/notFound');
