@@ -16,4 +16,6 @@ export const PATH = {
   MY_TIPS: '/my-tips',
   SAVED_TIPS: '/saved-tips',
   PROFILE_SETTINGS: '/profile-settings',
+  BLOG_PAGE: '/blog-page',
+  BLOG_DETAIL: '/blog-detail/:slug',
 };

@@ -1,6 +1,8 @@
 import SearchFilters from './components/SearchFilters';
 import MatchCard from './components/MatchCard';
 import Newsletter from './components/Newsletter';
+import { TopbarHeader } from '@/customComponents/TopbarHeader';
+import { Footer } from '@/customComponents/Footer';
 
 const ResultsPage = () => {
   const matchesData = [
@@ -108,6 +110,7 @@ const ResultsPage = () => {
 
   return (
     <div className="w-full bg-gradient-to-b from-[#101212] to-[#3B3E40]">
+      <TopbarHeader />
       <SearchFilters />
 
       <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
@@ -132,6 +135,7 @@ const ResultsPage = () => {
       </main>
 
       <Newsletter />
+      <Footer />
     </div>
   );
 };

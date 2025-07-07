@@ -71,6 +71,14 @@ export function TopbarHeader() {
           >
             Results
           </li>
+          <li
+            className="cursor-pointer hover:text-[#61F308]"
+            onClick={() => {
+              navigate(PATH.BLOG_PAGE);
+            }}
+          >
+            Blogs
+          </li>
           <li className="mr-6 cursor-pointer group relative w-6 h-6">
             {/* Green icon on top, hidden initially */}
             <img

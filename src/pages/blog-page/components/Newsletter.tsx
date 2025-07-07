@@ -2,7 +2,7 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <div className="bg-[#1C1D2199] w-full mx-auto rounded-xl sm:rounded-2xl py-8 sm:py-10 lg:py-12 relative overflow-hidden mb-20">
+    <div className="bg-[#1C1D2199] max-w-7xl mx-auto rounded-xl sm:rounded-2xl py-8 sm:py-10 lg:py-12 relative overflow-hidden mb-20">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-500 via-transparent to-blue-500"></div>

@@ -136,7 +136,20 @@ const router = createBrowserRouter([
           return { Component: ProfileSettings };
         },
       },
-
+      {
+        path: PATH.BLOG_PAGE,
+        lazy: async () => {
+          const { default: Blogpage } = await import('./pages/blog-page/index');
+          return { Component: Blogpage };
+        },
+      },
+      {
+        path: PATH.BLOG_DETAIL,
+        lazy: async () => {
+          const { default: BlogDetail } = await import('./pages/blog-detail/index');
+          return { Component: BlogDetail };
+        },
+      },
       {
         path: '*',
         lazy: async () => {
