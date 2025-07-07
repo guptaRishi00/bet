@@ -58,7 +58,7 @@ export default function SignUp() {
       //   },
       // ]);
       // console.log('Cookies set successfully');
-      // navigate(PATH.HOME_PAGE);
+      navigate(PATH.HOME_PAGE);
       // toast.success('Sign-in successful');
     } catch (error) {
       console.error('Sign-in error:', error);

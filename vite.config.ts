@@ -1,13 +1,12 @@
-import path from 'path';
-import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-// import mkcert from 'vite-plugin-mkcert';
+import react from '@vitejs/plugin-react';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [
-    react(),
-    // mkcert()
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -15,5 +14,22 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    host: true, // Allow external connections
+    hmr: {
+      overlay: true, // Show error overlay
+    },
+  },
+  build: {
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
 });

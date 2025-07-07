@@ -6,10 +6,12 @@
   "license": "Internal Use License",
   "author": "Shobhit Umrao (https://www.linkedin.com/in/shobhit-umrao/)",
   "scripts": {
+    "setup": "node scripts/setup.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "node scripts/setup.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -66,9 +68,10 @@
     "globals": "^15.14.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
+    "terser": "^5.31.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.5",
+    "vite": "^5.4.0",
     "vite-plugin-mkcert": "^1.17.6"
   }
 }

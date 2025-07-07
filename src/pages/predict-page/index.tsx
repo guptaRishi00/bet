@@ -1,16 +1,23 @@
+import { SecondTopbarHeaderBreadcrumb } from '@/components/layout/second-topbar-header-breadcrumb';
+import { TopbarHeader } from '@/components/layout/topbar-header';
+
 import icons_tips_page_back_arrow from '@/assets/icons_tips_page_back_arrow.png';
 import { useNavigate } from 'react-router-dom';
-import { PredictMatchesCard } from '@/customComponents/PredictMatchesCard';
-import { PredictMatchesSelect } from '@/customComponents/PredictMtchesSelect';
-import { GradientBackgroundButton } from '@/customComponents/GradientBackgroundButton';
-import { VerifiedTipsterCard } from '@/customComponents/VerifiedTipsterCard';
-import { Footer } from '@/customComponents/Footer';
+import { PredictMatchesCard } from '@/components/cards/predict-matches-card';
+import { PredictMatchesSelect } from '@/components/features/predict-matches-select';
+import { GradientBackgroundButton } from '@/components/buttons';
+import { VerifiedTipsterCard } from '@/components/cards/verified-tipster-card';
+import { Footer } from '@/components/layout/footer';
 
 export default function PredictPage() {
   const navigate = useNavigate();
   return (
     <div className="h-screen w-screen flex justify-center items-start bg-[#171919] overflow-y-auto recent-creation-horizontal-scrollbar">
       <div className="w-full [background:linear-gradient(180deg,_#101212_0%,_#3B3E40_99.99%)] flex flex-col items-start">
+        {/* topbar */}
+        <TopbarHeader />
+        {/* second top bar */}
+        <SecondTopbarHeaderBreadcrumb />
         {/* overall padding for all both x side */}
         <div className="w-full flex flex-row items-center bg-[#1C1D21] h-[56px] mt-2 justify-start pl-10">
           <img
@@ -25,10 +32,10 @@ export default function PredictPage() {
           </span>
         </div>
         <div className="w-full px-12 flex flex-col items-start mt-10">
-          <p className="font-poppins font-semibold text-[20px] leading-[20px] tracking-[0] text-white pl-3">
+          <p className="font-poppins font-semibold text-[20px] leading-[20px] tracking-[0] text-white px-3 py-4">
             Upcoming Matches
           </p>
-          <div className="w-full flex flex-col items-start justify-between">
+          <div className="w-full flex flex-col items-start justify-between gap-y-10">
             <PredictMatchesCard />
             <PredictMatchesCard />
             <PredictMatchesCard />
