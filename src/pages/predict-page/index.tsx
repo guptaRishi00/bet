@@ -1,6 +1,3 @@
-import { SecondTopbarHeaderBreadcrumb } from '@/customComponents/SecondTopbarHeaderBreadcrumb';
-import { TopbarHeader } from '@/customComponents/TopbarHeader';
-
 import icons_tips_page_back_arrow from '@/assets/icons_tips_page_back_arrow.png';
 import { useNavigate } from 'react-router-dom';
 import { PredictMatchesCard } from '@/customComponents/PredictMatchesCard';
@@ -14,10 +11,6 @@ export default function PredictPage() {
   return (
     <div className="h-screen w-screen flex justify-center items-start bg-[#171919] overflow-y-auto recent-creation-horizontal-scrollbar">
       <div className="w-full [background:linear-gradient(180deg,_#101212_0%,_#3B3E40_99.99%)] flex flex-col items-start">
-        {/* topbar */}
-        <TopbarHeader />
-        {/* second top bar */}
-        <SecondTopbarHeaderBreadcrumb />
         {/* overall padding for all both x side */}
         <div className="w-full flex flex-row items-center bg-[#1C1D21] h-[56px] mt-2 justify-start pl-10">
           <img

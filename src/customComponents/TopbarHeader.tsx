@@ -55,7 +55,7 @@ export function TopbarHeader() {
           </li>
           <li
             className={`cursor-pointer hover:text-[#61F308] ${
-              currentPath === PATH.PREDICT_PAGE ? 'text-[#61F308]' : ''
+              currentPath === PATH.RESULTS_PAGE ? 'text-[#61F308]' : ''
             }`}
             onClick={() => {
               navigate(PATH.PREDICT_PAGE);
@@ -63,13 +63,23 @@ export function TopbarHeader() {
           >
             Predict
           </li>
-          <li className="cursor-pointer hover:text-[#61F308]">Results</li>
+          <li
+            className="cursor-pointer hover:text-[#61F308]"
+            onClick={() => {
+              navigate(PATH.RESULTS_PAGE);
+            }}
+          >
+            Results
+          </li>
           <li className="mr-6 cursor-pointer group relative w-6 h-6">
             {/* Green icon on top, hidden initially */}
             <img
               src={user_icon_green}
               alt="user hover"
               className="w-full h-full rounded-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              onClick={() => {
+                navigate(PATH.PROFILE_PAGE);
+              }}
             />
 
             {/* White icon underneath */}
@@ -77,6 +87,9 @@ export function TopbarHeader() {
               src={user_icon}
               alt="user"
               className="w-full h-full rounded-full transition-opacity duration-300"
+              onClick={() => {
+                navigate(PATH.PROFILE_PAGE);
+              }}
             />
           </li>
         </ul>
