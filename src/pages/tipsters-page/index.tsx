@@ -35,15 +35,11 @@ export default function AiTipsterPage() {
         <div className="w-full px-12 flex flex-col items-start mt-10">
           <SearchTopbarTipsPage buttonName="Bet Slip" />
           {/*  */}
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-5">
             <TipstersCardTipstersPage />
             <TipstersCardTipstersPage />
-          </div>
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
             <TipstersCardTipstersPage />
             <TipstersCardTipstersPage />
-          </div>
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
             <TipstersCardTipstersPage />
             <TipstersCardTipstersPage />
           </div>

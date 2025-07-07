@@ -2,7 +2,7 @@ import icon_user_profile_tripster from '@/assets/icon_user_profile_tripster.png'
 
 export function TipstersCardTipstersPage() {
   return (
-    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-[656px] h-[274px]">
+    <div className="p-[1px] rounded-[12px] bg-gradient-to-b from-[#61F308BF] to-[#15B54BBF] w-full">
       <div className="h-full w-full rounded-[11px] bg-[#161818] text-white flex flex-col overflow-clip px-4 py-5">
         {/* Header */}
         <div className="flex items-center justify-between">

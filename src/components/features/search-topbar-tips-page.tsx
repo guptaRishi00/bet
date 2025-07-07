@@ -9,7 +9,7 @@ export function SearchTopbarTipsPage({ buttonName }: { buttonName: string }) {
     <div className="w-full flex flex-col lg:flex-row items-center md:items-center justify-center gap-6 md:gap-8 px-4">
       {/* Search Input */}
       <div className="w-full md:flex-grow flex justify-center md:justify-start">
-        <div className="w-full max-w-[400px]">
+        <div className="w-full mx-auto max-w-[400px]">
           <SearchInput />
         </div>
       </div>
