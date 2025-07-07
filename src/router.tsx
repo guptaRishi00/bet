@@ -125,10 +125,18 @@ const router = createBrowserRouter([
       {
         path: PATH.SAVED_TIPS,
         lazy: async () => {
-          const module = await import('./pages/profile/saved-tips');
-          return { default: module.default };
+          const { default: SavedTips } = await import('./pages/profile/saved-tips');
+          return { Component: SavedTips };
         },
       },
+      {
+        path: PATH.PROFILE_SETTINGS,
+        lazy: async () => {
+          const { default: ProfileSettings } = await import('./pages/profile/settings');
+          return { Component: ProfileSettings };
+        },
+      },
+
       {
         path: '*',
         lazy: async () => {

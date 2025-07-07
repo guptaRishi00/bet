@@ -15,4 +15,5 @@ export const PATH = {
   WALLET_PAGE: '/wallet',
   MY_TIPS: '/my-tips',
   SAVED_TIPS: '/saved-tips',
+  PROFILE_SETTINGS: '/profile-settings',
 };
