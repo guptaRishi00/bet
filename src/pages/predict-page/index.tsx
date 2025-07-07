@@ -32,10 +32,10 @@ export default function PredictPage() {
           </span>
         </div>
         <div className="w-full px-12 flex flex-col items-start mt-10">
-          <p className="font-poppins font-semibold text-[20px] leading-[20px] tracking-[0] text-white pl-3">
+          <p className="font-poppins font-semibold text-[20px] leading-[20px] tracking-[0] text-white px-3 py-4">
             Upcoming Matches
           </p>
-          <div className="w-full flex flex-col items-start justify-between">
+          <div className="w-full flex flex-col items-start justify-between gap-y-10">
             <PredictMatchesCard />
             <PredictMatchesCard />
             <PredictMatchesCard />
