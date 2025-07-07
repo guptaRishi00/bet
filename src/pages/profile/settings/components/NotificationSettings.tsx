@@ -28,7 +28,7 @@ const NotificationSettings = () => {
   ];
 
   return (
-    <div className="bg-[#1C1D21] rounded-lg p-6 border-2 border-blue-500/30 h-full">
+    <div className="bg-[#1C1D21] rounded-lg p-6 border-2 border-[#1C1D21] h-full">
       <h2 className="text-xl font-semibold mb-6">Notification Settings</h2>
 
       <div className="space-y-6 flex-1">
