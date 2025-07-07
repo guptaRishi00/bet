@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import MoreArticlesSection from '../blog-page/components/MoreArticlesSection';
 import Newsletter from '../result-page/components/Newsletter';
 import { Footer } from '@/customComponents/Footer';
+import { TopbarHeader } from '@/components';
 
 const BlogDetail = () => {
   return (
     <div className="w-full bg-gradient-to-b from-[#101212] to-[#3B3E40]">
+      <TopbarHeader/>
       {/* Navigation Header */}
       <div className="bg-gray-900 border-b border-gray-800">
         <div className="w-full mx-auto px-4 py-4">
