@@ -36,7 +36,7 @@ export default function TipsPage() {
         <div className="w-full px-12 flex flex-col items-start mt-10">
           <SearchTopbarTipsPage buttonName="Bet Slip" />
           {/*  */}
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-5 w-full">
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
@@ -55,8 +55,7 @@ export default function TipsPage() {
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-          </div>
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
+
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
@@ -75,8 +74,7 @@ export default function TipsPage() {
               football_2_logo={football_real_madrid}
               football_2_name="Real Madrid"
             />
-          </div>
-          <div className="flex w-full flex-row items-start justify-between mt-[42px]">
+
             <AiTipsCardTipsPage
               football_1_logo={football_barcelona}
               football_1_name="Barcelona"
@@ -101,40 +99,39 @@ export default function TipsPage() {
               Load More Tips
             </GradientBackgroundButton>
           </div>
-          <div className="w-full">
-            <div className="bg-[#1C1D2199] flex flex-row items-center justify-between rounded-[16px]">
-              <div className="flex flex-col pt-8 pl-14">
-                <p className="font-poppins font-semibold text-[24px] leading-[24px] tracking-[0] text-white">
+          <div className="w-full px-4">
+            <div className="bg-[#1C1D2199] flex flex-col md:flex-row items-center justify-between rounded-[16px] p-6 md:p-0">
+              <div className="flex flex-col md:pt-8 md:pl-14 text-center md:text-left">
+                <p className="font-poppins font-semibold text-[20px] md:text-[24px] leading-[24px] text-white">
                   Unlock Premium Tips
                 </p>
-                <p className="font-poppins font-semibold text-[14px] leading-[24px] tracking-[0] text-[#FFFFFFBF]">
+                <p className="font-poppins font-semibold text-[14px] leading-[24px] text-[#FFFFFFBF] mt-2">
                   Get access to all premium tips, detailed analysis, and exclusive features.
                 </p>
 
-                <div className="mt-4 mb-9 ml-[18px] text-white">
-                  <ul className="list-disc pl-5">
+                <div className="mt-4 mb-6 md:mb-9 text-white">
+                  <ul className="list-disc pl-6 md:pl-5 text-left">
                     <li>Access to all premium tips</li>
                     <li>Detailed statistical analysis</li>
                     <li>Expert insights and predictions</li>
                   </ul>
                 </div>
               </div>
-              {/*  */}
-              <div className="mr-10">
-                <div className="flex flex-row items-center justify-center mb-4 text-white">
-                  <p className="font-poppins font-semibold text-[24px] leading-[24px] tracking-[0]">
-                    $21.99
-                  </p>
-                  <span className="font-poppins font-semibold text-[16px] leading-[24px] tracking-[0]">
+
+              <div className="w-full md:w-auto flex flex-col items-center md:items-end gap-4 md:mr-10">
+                <div className="flex flex-row items-end justify-center text-white">
+                  <p className="font-poppins font-semibold text-[24px] leading-[24px]">$21.99</p>
+                  <span className="font-poppins font-semibold text-[16px] leading-[24px] ml-1">
                     /month
                   </span>
                 </div>
-                <GradientBackgroundButton className="h-[48px] w-[194px]">
+                <GradientBackgroundButton className="h-[48px] w-full md:w-[194px]">
                   Subscribe Now
                 </GradientBackgroundButton>
               </div>
             </div>
           </div>
+
           <Footer />
         </div>
       </div>
