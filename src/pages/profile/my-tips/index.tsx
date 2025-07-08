@@ -1,4 +1,6 @@
+import { TopbarHeader } from '@/customComponents/TopbarHeader';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const bets = [
   {
@@ -70,22 +72,29 @@ const bets = [
 ];
 
 export default function MyTips() {
+  const navigate = useNavigate();
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#101212] to-[#3B3E40] text-white">
+      <TopbarHeader />
       {/* Header */}
       <div className="flex items-center mb-4 sm:mb-6">
-        <button className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-10 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors">
+        <button
+          onClick={() => navigate('/profile')}
+          className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-10 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors"
+        >
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 rotate-180" />
-          <span className="font-bold text-sm sm:text-base">Profile {'>'} My Tips</span>
+          <span className="font-bold text-sm sm:text-base">
+            Profile {'>'} Overview {'>'} My Tips
+          </span>
         </button>
       </div>
 
-      <div className="p-6">
+      <div className="p-6 bg-[#1C1D21] w-[90%] mx-auto rounded-lg mb-10">
         <h1 className="text-xl font-semibold mb-6">Recent Bets</h1>
 
         <div className="space-y-4">
           {bets.map((bet, index) => (
-            <div key={index} className="bg-[#1C1D21] rounded-lg p-4 border border-gray-700">
+            <div key={index} className="bg-[#1C1D21] p-4 border-b-2 border-gray-700">
               {/* Match name and status */}
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-medium text-white">{bet.match}</h3>

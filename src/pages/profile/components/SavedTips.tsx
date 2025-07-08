@@ -51,7 +51,7 @@ export default function SavedTips() {
         {tipCards.map((tip, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-[#61F308] to-[#0e8d38] p-[1px] rounded-xl"
+            className="bg-gradient-to-b from-[#61F308] to-[#0e8d38] p-[1px] rounded-xl shadow-xl"
           >
             <div className="bg-[#1C1D21] rounded-xl p-4">
               {/* Header with avatar and author info */}
@@ -61,7 +61,11 @@ export default function SavedTips() {
                 </div>
                 <div className="flex-1">
                   <p className="text-white font-medium">{tip.author}</p>
-                  <p className="text-gray-400 text-xs">{tip.stats}</p>
+                  <p className="w-full text-xs flex items-center gap-2">
+                    <span className="text-gray-500">156 Tips</span>
+                    <span className="">Avg Odds : 1.95</span>
+                    <span className="text-[#61F308]">78% Win Rate</span>
+                  </p>
                 </div>
               </div>
 
@@ -89,25 +93,27 @@ export default function SavedTips() {
 
               {/* Prediction */}
               <div className="mb-4">
-                <p className="text-green-400 font-medium mb-2">{tip.prediction}</p>
                 <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-gray-400 text-xs">Predicted Winner :</p>
-                    <p className="text-green-400 font-medium">{tip.winner}</p>
+                  <p className="text-[#61F308BF] font-medium mb-2">{tip.prediction}</p>
+                  <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-full inline-block">
+                    <div className=" text-white px-3 py-1 rounded-full text-xs font-medium bg-[#1F2E24]">
+                      {tip.probability}
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2">
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-2">
+                      <p className="text-gray-400 text-xs">Predicted Winner :</p>
+                      <p className="text-[#61F308BF] font-medium">{tip.winner}</p>
+                    </div>
                     <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-full inline-block">
                       <div className="text-white px-3 py-1 rounded-full text-xs font-medium bg-[#1F2E24]">
                         {tip.odds} +
                       </div>
                     </div>
-
-                    <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-full inline-block">
-                      <div className=" text-white px-3 py-1 rounded-full text-xs font-medium bg-[#1F2E24]">
-                        {tip.probability}
-                      </div>
-                    </div>
                   </div>
+                  <div className="flex flex-col gap-2"></div>
                 </div>
               </div>
 
@@ -116,11 +122,11 @@ export default function SavedTips() {
 
               {/* Bottom actions */}
               <div className="flex items-center justify-between">
-                <button className="text-green-400 hover:text-green-300 transition-colors">
+                <button className="text-[#61F308BF] hover:text-green-600 transition-colors">
                   <Trash2 className="w-5 h-5" />
                 </button>
-                <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-xl">
-                  <button className="bg-[#1C1D21] text-green-400 hover:bg-green-600 hover:text-white px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition-colors w-full h-full">
+                <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-full">
+                  <button className="bg-[#1F2E24] text-green-400 hover:bg-[#61F308] hover:text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-colors w-full h-full">
                     Add to Bet Slip
                     <Plus className="w-4 h-4" />
                   </button>
@@ -136,7 +142,7 @@ export default function SavedTips() {
         <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-2xl">
           <button
             onClick={() => navigate('/saved-tips')}
-            className=" bg-[#1C1D21] text-green-400 hover:bg-green-600 hover:text-white px-6 py-3 rounded-2xl font-medium flex items-center gap-2 transition-colors w-full h-full"
+            className=" bg-[#1C1D21] text-green-400 hover:bg-[#61F308] hover:text-white px-6 py-3 rounded-2xl font-medium flex items-center gap-2 transition-colors w-full h-full"
           >
             View All Saved Tips
             <ArrowRight className="w-4 h-4" />

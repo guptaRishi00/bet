@@ -20,7 +20,7 @@ const PreferencesSection = () => {
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">Timezone</label>
           <Select value={timezone} onValueChange={setTimezone}>
-            <SelectTrigger className="bg-black border-gray-700 text-white">
+            <SelectTrigger className="bg-black border-green-400 rounded-full text-white">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-gray-700 border-gray-700">
@@ -36,7 +36,7 @@ const PreferencesSection = () => {
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">Currency</label>
           <Select value={currency} onValueChange={setCurrency}>
-            <SelectTrigger className="bg-black border-gray-700 text-white">
+            <SelectTrigger className="bg-black border-green-400 rounded-full text-white">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-gray-700 border-gray-700">
@@ -49,8 +49,8 @@ const PreferencesSection = () => {
           </Select>
         </div>
 
-        <div className="pt-4">
-          <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-all hover:scale-105">
+        <div className="pt-4 w-full  flex items-center justify-end">
+          <Button className="bg-gradient-to-b from-[#61F308] to-[#15B54B] hover:opacity-90 text-white px-8 py-3 rounded-full font-medium transition-colors">
             Save Preferences
           </Button>
         </div>

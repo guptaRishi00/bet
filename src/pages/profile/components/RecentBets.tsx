@@ -93,13 +93,15 @@ export default function RecentBets() {
 
       {/* Show all bets button */}
       <div className="mt-6 flex justify-end">
-        <button
-          onClick={() => navigate('/my-tips')}
-          className="flex items-center gap-2 px-6 py-3 bg-transparent border border-green-600 text-green-400 hover:bg-green-600 hover:text-white rounded-lg transition-colors"
-        >
-          <span>Show All My Bets</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+        <div className="bg-gradient-to-b from-[#61F308] to-[#15B54B] p-[1px] rounded-2xl">
+          <button
+            onClick={() => navigate('/my-tips')}
+            className=" bg-[#1C1D21] text-green-400 hover:bg-[#61F308] hover:text-white px-6 py-3 rounded-2xl font-medium flex items-center gap-2 transition-colors w-full h-full"
+          >
+            Show All Saved Tips
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

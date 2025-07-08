@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { User, X } from 'lucide-react';
 
 const BettingCard = () => {
   return (
@@ -10,9 +10,9 @@ const BettingCard = () => {
 
       {/* Profile section */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center overflow-hidden">
-          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-            👤
+        <div className="w-12 h-12 bg-gradient-to-br from-[#61F308] to-[#15B54B] rounded-full flex items-center justify-center overflow-hidden">
+          <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold">
+            <User />
           </div>
         </div>
         <div>
@@ -59,7 +59,17 @@ const BettingCard = () => {
       </div>
 
       {/* Add to bet slip button */}
-      <button className="w-full bg-transparent border border-green-500 text-green-400 py-3 rounded-2xl font-semibold hover:bg-green-500 hover:text-white transition-all duration-300 text-lg">
+      <button
+        className="w-full py-3 rounded-full font-semibold text-lg text-green-400 transition-all duration-300 cursor-pointer"
+        style={{
+          background: '#1F2E24',
+          border: '2px solid transparent',
+          backgroundImage:
+            'linear-gradient(#1F2E24, #1F2E24), linear-gradient(to bottom, #61F308, #15B54B)',
+          backgroundOrigin: 'padding-box, border-box',
+          backgroundClip: 'padding-box, border-box',
+        }}
+      >
         Add to Bet Slip +
       </button>
     </div>

@@ -28,7 +28,7 @@ const NotificationSettings = () => {
   ];
 
   return (
-    <div className="bg-[#1C1D21] rounded-lg p-6 border-2 border-[#1C1D21] h-full">
+    <div className="bg-[#1C1D21] rounded-lg p-6 border-2 border-[#1C1D21] w-full lg:h-[52%]">
       <h2 className="text-xl font-semibold mb-6">Notification Settings</h2>
 
       <div className="space-y-6 flex-1">
@@ -41,7 +41,7 @@ const NotificationSettings = () => {
             <Switch
               checked={setting.enabled}
               onCheckedChange={setting.onChange}
-              className="data-[state=checked]:bg-green-500"
+              className="data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-[#61F308] data-[state=checked]:to-[#15B54B] data-[state=unchecked]:bg-[#FFFFFF29] [&>span]:bg-white"
             />
           </div>
         ))}

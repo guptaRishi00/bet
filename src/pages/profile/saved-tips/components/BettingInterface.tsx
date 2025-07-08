@@ -1,6 +1,7 @@
 import Header from './Header';
 import BettingCard from './BettingCard';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const BettingInterface = () => {
   // ... keep existing code (bettingData array)
@@ -85,12 +86,19 @@ const BettingInterface = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#101212] to-[#3B3E40] text-white">
       <div className="flex items-center mb-4 sm:mb-6">
-        <button className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-28 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors">
+        <button
+          onClick={() => navigate('/profile')}
+          className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-28 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors"
+        >
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 rotate-180" />
-          <span className="font-bold text-sm sm:text-base">Profile {'>'} Wallet</span>
+          <span className="font-bold text-sm sm:text-base">
+            Profile {'>'} Overview {'>'} Saved Tips
+          </span>
         </button>
       </div>
       <Header />

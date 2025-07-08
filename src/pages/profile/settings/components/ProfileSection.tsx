@@ -73,7 +73,7 @@ const ProfileSection = () => {
             <Input
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="bg-black border-gray-700 focus:border-green-400 text-white"
+              className="bg-black  rounded-full border border-green-400 focus:border-green-400 text-white"
               placeholder="Enter your full name"
             />
           </div>
@@ -83,7 +83,7 @@ const ProfileSection = () => {
             <Input
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              className="bg-black border-gray-700 focus:border-green-400 text-white"
+              className="bg-black  rounded-full border border-green-400 focus:border-green-400 text-white"
               placeholder="Enter your username"
             />
           </div>
@@ -94,7 +94,7 @@ const ProfileSection = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-black border-gray-700 focus:border-green-400 text-white"
+              className="bg-black  rounded-full border border-green-400 focus:border-green-400 text-white"
               placeholder="Enter your email"
             />
           </div>
@@ -104,7 +104,7 @@ const ProfileSection = () => {
             <Input
               value={contact}
               onChange={(e) => setContact(e.target.value)}
-              className="bg-black border-gray-700 focus:border-green-400 text-white"
+              className="bg-black  rounded-full border border-green-400 focus:border-green-400 text-white"
               placeholder="Enter your contact"
             />
           </div>
@@ -114,7 +114,7 @@ const ProfileSection = () => {
             <Textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
-              className="bg-black border-gray-700 focus:border-green-400 text-white min-h-[100px]"
+              className="bg-black border-green-400 rounded-full p-7 focus:border-green-400 text-white h-[50px]"
               placeholder="Tell us about yourself"
             />
           </div>
@@ -122,7 +122,7 @@ const ProfileSection = () => {
       </div>
 
       <div className="flex justify-end mt-6">
-        <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-2 rounded-lg transition-all hover:scale-105">
+        <Button className="bg-gradient-to-b from-[#61F308] to-[#15B54B] hover:opacity-90 text-white px-8 py-3 rounded-full font-medium transition-colors">
           Save Changes
         </Button>
       </div>

@@ -1,6 +1,8 @@
 import { ArrowLeft, ArrowRight, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { TopbarHeader } from '@/customComponents/TopbarHeader';
+import { useNavigate } from 'react-router-dom';
 
 export default function Wallet() {
   const transactions = [
@@ -11,11 +13,17 @@ export default function Wallet() {
     { date: 'Apr 15, 2025', type: 'Bank Transfer', amount: 150, color: 'text-red-500' },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#101212] to-[#3B3E40] text-white">
+      <TopbarHeader />
       {/* Header */}
       <div className="flex items-center mb-4 sm:mb-6">
-        <button className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-28 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors">
+        <button
+          onClick={() => navigate('/profile')}
+          className="flex bg-[#1C1D21] py-3 sm:py-4 lg:py-5 px-4 sm:px-8 lg:px-28 w-full items-center justify-center sm:justify-start text-gray-300 hover:text-white transition-colors"
+        >
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 rotate-180" />
           <span className="font-bold text-sm sm:text-base">Profile {'>'} Wallet</span>
         </button>
@@ -56,10 +64,10 @@ export default function Wallet() {
           {/* Wallet Balance */}
           <div className="space-y-6">
             <Card className="bg-[#1C1D21] border-gray-700">
-              <CardContent className="p-6">
+              <CardContent className="p-10">
                 <h2 className="text-xl font-bold text-white mb-4">Wallet Balance</h2>
 
-                <div className="flex items-center mb-6">
+                <div className="flex items-center justify-center mb-6">
                   <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
                   <span className="text-green-400 text-3xl font-bold">325.50</span>
                 </div>
@@ -71,7 +79,7 @@ export default function Wallet() {
 
                   <Button
                     variant="outline"
-                    className="w-full bg-[#1C1D21] border-green-500 text-green-500 hover:bg-green-500 hover:text-white py-3 rounded-2xl"
+                    className="w-full bg-[#1C1D21] border-green-500 text-green-500 hover:bg-[#61F308] hover:text-white py-3 rounded-2xl"
                   >
                     Withdraw
                   </Button>
@@ -97,12 +105,12 @@ export default function Wallet() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-8 bg-[#1C1D21] rounded-3xl border border-gray-600">
+                  <div className="flex items-center justify-between p-8 bg-[#1C1D21] rounded-3xl border border-green-500">
                     <div className="flex items-center">
                       <CreditCard className="w-5 h-5 text-white mr-3" />
                       <span className="text-white">Mastercard ****4582</span>
                     </div>
-                    <button className="text-green-500 text-sm hover:text-green-400">
+                    <button className="text-green-600 text-sm hover:text-green-400">
                       Set default
                     </button>
                   </div>
